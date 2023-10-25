@@ -1,0 +1,38 @@
+{
+  "name": "ncpa0cpl.github.io-adwave-docs",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "Szymon Bretner",
+    "email": ""
+  },
+  "scripts": {
+    "fix:format": "prettier -w ./src/**/*.ts",
+    "test:format": "prettier -c ./src/**/*.ts",
+    "test:tsc": "tsc --noEmit",
+    "build": "node ./scripts/build.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "async-await-queue": "^2.1.4",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.19.5",
+    "git-hook-tasks": "ncpa0cpl/git-hook-tasks",
+    "husky": "^8.0.3",
+    "jsxte": "^3.1.6",
+    "node-os-walk": "^1.0.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-jsdoc": "^1.1.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "adwavecss": "^0.0.2"
+  }
+}
