@@ -2,14 +2,12 @@ const vm = require("vm");
 const md = require("module");
 const url = require("url");
 
-module.exports.evalModule = async function evalModule(
-  filename,
-  code,
-) {
+module.exports.evalModule = async function evalModule(filename, code) {
   const ctxExports = {};
   const ctxRequire = md.createRequire(url.pathToFileURL(filename));
 
   const context = {
+    ...global,
     exports: ctxExports,
     module: {
       exports: ctxExports,
@@ -20,6 +18,8 @@ module.exports.evalModule = async function evalModule(
     },
     global: global,
     require: ctxRequire,
+    console: console,
+    RegExp: RegExp,
   };
 
   const script = new vm.Script(code);

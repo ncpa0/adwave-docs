@@ -1,0 +1,13 @@
+.code-sample {
+  width: 75%;
+}
+
+.code-sample-result {
+  width: 75%;
+}
+
+.code-sample-container {
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}

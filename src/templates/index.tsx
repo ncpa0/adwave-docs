@@ -1,5 +1,5 @@
-import { Layout } from "../layout";
+import BoxExample from "./example-page/box";
 
 export default function Index() {
-  return <Layout></Layout>;
+  return <BoxExample />;
 }

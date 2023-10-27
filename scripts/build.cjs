@@ -4,6 +4,7 @@ const path = require("path");
 const { buildTemplate } = require("./tmpl-builder.cjs");
 const { changeExt } = require("./change-ext.cjs");
 const { Queue } = require("async-await-queue");
+const rimraf = require("rimraf");
 
 const p = (...pathSegments) => {
   return path.resolve(__dirname, "..", ...pathSegments);
@@ -14,7 +15,17 @@ const templatesSrc = p("src/templates");
 /** @typedef {{ root: string; tsx: string }} Template */
 
 async function build() {
-  const outDir = p("public");
+  const outDir = p("docs");
+
+  if (process.argv.includes("--clean")) {
+    const outDirFiles = await fs.promises.readdir(outDir);
+
+    await Promise.all(
+      outDirFiles.map((f) => {
+        return rimraf.rimraf(path.join(outDir, f));
+      }),
+    );
+  }
 
   /** @type {Template[]} */
   const templates = [];
@@ -55,12 +66,18 @@ build()
 
       const chokidar = require("chokidar");
 
-      chokidar.watch(p("src")).on("all", () => {
-        buildQueue.run(async () => {
-          await build().catch((e) => {
-            console.log(e);
+      chokidar
+        .watch(p("src"), { alwaysStat: false, ignoreInitial: true, useFsEvents: true })
+        .on("all", (ev, fPath, stats) => {
+          if (ev === "addDir") return;
+
+          console.log(`File changed, recompiling (${path.relative(p("."), fPath)})`);
+
+          buildQueue.run(async () => {
+            await build().catch((e) => {
+              console.log(e);
+            });
           });
         });
-      });
     }
   });

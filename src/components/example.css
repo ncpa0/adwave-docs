@@ -1,0 +1,15 @@
+.example-section {
+  min-width: calc(70vw - 200px);
+  max-width: calc(90vw - 200px);
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+.example-section p {
+  place-self: flex-start;
+  margin-left: 12.5%;
+}
+
+.example-section:not(:last-child) {
+  margin-bottom: 2em;
+}

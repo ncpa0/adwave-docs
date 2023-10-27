@@ -12,5 +12,7 @@
       "url": "./node_modules/git-hook-tasks/dist/config/json-schema.json"
     }
   ],
-  "liveServer.settings.root": "/public"
+  "liveServer.settings.root": "/docs",
+  "liveServer.settings.port": 5501,
+  "liveServer.settings.wait": 600
 }

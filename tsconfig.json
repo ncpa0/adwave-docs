@@ -16,7 +16,12 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "noImplicitAny": true,
-    "jsxImportSource": "jsxte"
+    "jsxImportSource": "jsxte",
+    "allowJs": true,
+    "noEmit": true,
+    "paths": {
+      "scripts/*": ["./scripts/*"]
+    }
   },
   "include": [
     "src/**/*"
