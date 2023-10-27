@@ -8,13 +8,19 @@ jobs:
   build:
     name: Deploy
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: "yarn"
-      - name: Generate static html
+      - name: Install dependencies
         uses: borales/actions-yarn@v4
         with:
           cmd: install
@@ -24,11 +30,13 @@ jobs:
           cmd: build
         env:
           BASE_URL: "/adwave-docs/"
-      - run: mkdir ./artifact
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./artifact
-          retention-days: 360
+          path: ./docs
+          retention-days: 90
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v2
