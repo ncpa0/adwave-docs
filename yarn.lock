@@ -182,6 +182,11 @@ adwavecss@^0.0.2:
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.2.tgz#1ddbd487b6be4ae5240e3108fcdc163c677384b9"
   integrity sha512-aNB1y2aAfOYeYmnSwgR+gH+2lMrN85ilUAMHtQ4xCad3aj5GSWFvgJMoDIlh7F8TEgZUyNXGHmPHGnNTA1jFfw==
 
+adwavecss@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.3.tgz#233a5008b05f67b04f389bcf6f0f065e07e47dca"
+  integrity sha512-FXMkZiRGWMnh+eUETgIKUcujPzi5sAzGrU2/3zFn9yYA52d0U5S0OQBOLHVU7Iq34aYC7Z5yhp59/CfjEJQ2BA==
+
 adwaveui@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.1.tgz#712b437c0136582352953d5a199cd9aaa256887b"
