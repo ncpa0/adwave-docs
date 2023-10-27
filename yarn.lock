@@ -182,6 +182,15 @@ adwavecss@^0.0.2:
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.2.tgz#1ddbd487b6be4ae5240e3108fcdc163c677384b9"
   integrity sha512-aNB1y2aAfOYeYmnSwgR+gH+2lMrN85ilUAMHtQ4xCad3aj5GSWFvgJMoDIlh7F8TEgZUyNXGHmPHGnNTA1jFfw==
 
+adwaveui@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.1.tgz#712b437c0136582352953d5a199cd9aaa256887b"
+  integrity sha512-Oo3AWHqZu42+3J/sw0OEaPWTqi2CQ7GWQgrg9hujohF/ew/RXApzBsFKrzWX+044mBqCYAN5HCXNTxNeRItkSA==
+  dependencies:
+    adwavecss "^0.0.2"
+    jsxte "^3.1.5"
+    jsxte-wc "^1.1.4"
+
 ansi-regex@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz#082cb2c89c9fe8659a311a53bd6a4dc5301db304"
@@ -447,7 +456,12 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jsxte@^3.1.6:
+jsxte-wc@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.4.tgz#4032d4c1116d703677226d7cedb4818a18b8e198"
+  integrity sha512-XdZlIh3cwJi02+JTTsjNHBpc40sZ6K6u2rJScEpnHhZhosDkm5aTUpSuUnWHg+ltT4rdH+mTDnoKbN0y0GlrDw==
+
+jsxte@^3.1.5, jsxte@^3.1.6:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.1.6.tgz#1f7a74af1345e12e044519a1f916b1ba7071cd1a"
   integrity sha512-9Kx5nrwBriZZ2Wu5WQA4Lxtap/gklOdvGMDaoSQZ28bU7I4FrnTBVevxklPX9TrDTKgUB0Nn+F1z7pkptcRidQ==
@@ -767,6 +781,7 @@ signal-exit@^4.0.1:
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -785,6 +800,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     strip-ansi "^7.0.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
