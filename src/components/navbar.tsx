@@ -1,11 +1,12 @@
 import { Style } from "../style";
+import { url } from "../utils/url";
 import { ThemeSwitcher } from "./theme-switcher";
 
 const NavbarLink = (props: { href: string; label: string }) => {
   return (
     <a
       class="navbar-link"
-      href={props.href}
+      href={url(props.href)}
       hx-swap="outerHTML"
       hx-target="#example-view"
       hx-select="#example-view"

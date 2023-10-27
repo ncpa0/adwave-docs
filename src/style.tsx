@@ -3,6 +3,7 @@ import { ComponentApi } from "jsxte/dist/types/component-api/component-api";
 import path from "node:path";
 import process from "node:process";
 import EFC from "scripts/external-files-context";
+import { url } from "./utils/url";
 
 const IS_DEV = process.argv.includes("--dev");
 
@@ -50,7 +51,7 @@ export const Style = async (
   return (
     <link
       rel="stylesheet"
-      href={src}
+      href={url(src)}
       type="text/css"
       media="screen"
     />
