@@ -24,7 +24,11 @@ jobs:
           cmd: build
         env:
           BASE_URL: "/adwave-docs/"
+      - run: mkdir ./artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./artifact
+          retention-days: 360
       - name: Deploy
         uses: actions/deploy-pages@v2
