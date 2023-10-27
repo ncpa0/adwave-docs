@@ -16,10 +16,12 @@ jobs:
           cache: "yarn"
       - name: Generate static html
         uses: borales/actions-yarn@v4
-        run: yarn install
+        with:
+          cmd: install
       - name: Generate static html
         uses: borales/actions-yarn@v4
-        run: yarn build
+        with:
+          cmd: build
         env:
           BASE_URL: "/adwave-docs/"
       - name: Upload artifact
