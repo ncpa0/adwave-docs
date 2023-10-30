@@ -1,36 +1,43 @@
+import { Button } from "adwavecss";
 import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
-import { Style } from "../../style";
+import { cls } from "../../utils/cls";
 
 export default function ButtonExample() {
   return (
-    <Layout>
+    <Layout
+      title="Button - Example"
+      activePage="button"
+    >
       <div class="flexbox column">
-        <Style
-          dirname={__dirname}
-          path="./button.css"
-          inline
-        />
         <Example title="Button">
           <ExampleSection label="Regular Button">
             <CodeSample>
-              <button class="btn button-example">Button</button>
+              <button class={cls(Button.button, "button-example")}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Primary Button">
             <CodeSample>
-              <button class="btn button-example primary">Button</button>
+              <button class={cls(Button.button, Button.primary, "button-example")}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Danger Button">
             <CodeSample>
-              <button class="btn button-example danger">Button</button>
+              <button class={cls(Button.button, Button.danger, "button-example")}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Flat Button">
             <CodeSample>
-              <button class="btn button-example flat">Button</button>
+              <button class={cls(Button.button, Button.flat, "button-example")}>Button</button>
+            </CodeSample>
+          </ExampleSection>
+          <ExampleSection label="Cicrular and Square Buttons">
+            <CodeSample>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center;">
+                <button class={cls(Button.button, Button.circular, "button-example")}>...</button>
+                <button class={cls(Button.button, Button.square, "button-example")}>...</button>
+              </div>
             </CodeSample>
           </ExampleSection>
         </Example>

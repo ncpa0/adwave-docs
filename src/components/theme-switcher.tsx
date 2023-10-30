@@ -1,5 +1,7 @@
+import { Button, Input } from "adwavecss";
 import { Script } from "../script";
 import { Style } from "../style";
+import { cls } from "../utils/cls";
 
 export function ThemeSwitcher() {
   return (
@@ -9,15 +11,15 @@ export function ThemeSwitcher() {
         path="./theme-switcher.css"
         inline
       />
-      <div class="flexbox linked theme-switcher">
+      <div class={cls(Input.linked, "flexbox theme-switcher")}>
         <button
-          class="btn toggled"
+          class={cls(Button.button, Button.toggled)}
           data-theme="dark-theme"
         >
           Dark Theme
         </button>
         <button
-          class="btn"
+          class={Button.button}
           data-theme="light-theme"
         >
           Light Theme

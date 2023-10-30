@@ -40,7 +40,8 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     bundle: true,
     minify: !IS_DEV,
     write: false,
-    external: ["jsxte", "esbuild", "scripts"],
+    sourcemap: IS_DEV ? "inline" : false,
+    external: ["jsxte", "esbuild", "scripts", "prettier"],
     platform: "node",
     plugins: [plugin],
     alias: {

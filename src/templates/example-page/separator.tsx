@@ -1,5 +1,5 @@
 import { Layout } from "../../layout";
 
 export default function SeparatorExample() {
-  return <Layout></Layout>;
+  return <Layout activePage="separator"></Layout>;
 }

@@ -3,9 +3,37 @@
   top: 0;
   left: 0;
   height: 100vh;
+  margin: 0px 0.3em;
 }
 
 .left-navbar > .nav-sidebar {
   height: 100%;
   overflow: auto;
+}
+
+.left-navbar > .separator {
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  margin: 0.75em 0.5em 0px;
+  width: calc(100% - 1em);
+}
+
+.nav-sidebar.nav-sidebar {
+  width: 14em;
+  justify-content: flex-start;
+}
+
+.nav-sidebar .nav-sidebar-btn.nav-sidebar-btn {
+  padding: 0.55em 0.7em;
+}
+
+.navbar-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+a.navbar-link,
+a.navbar-link button {
+  cursor: pointer;
 }

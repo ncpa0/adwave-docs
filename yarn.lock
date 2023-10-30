@@ -2,6 +2,41 @@
 # yarn lockfile v1
 
 
+"@dprint/darwin-arm64@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/darwin-arm64/-/darwin-arm64-0.42.5.tgz#eb5b2ad156128ad3da1e4e83707df9e2e995947c"
+  integrity sha512-3bBBlaAXQ9WTC+jvd2/iyj7cVp0G58/v5R7+YADUl5K9xF+Ah+xLFm6xw4Iwq+zsYaWDimRmLnM5iRSJC9qv1Q==
+
+"@dprint/darwin-x64@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/darwin-x64/-/darwin-x64-0.42.5.tgz#4087ed4d69c7afabd61e19ee9e9aa8cda9c951c4"
+  integrity sha512-gwx6lODOckU3xGv0zVFad/SMMtwBleiBAzm3UVw/WkGiCVo3XrIZ6EdLr4zCmB4A2R+SOxODU70WtONCF0dGnQ==
+
+"@dprint/linux-arm64-glibc@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/linux-arm64-glibc/-/linux-arm64-glibc-0.42.5.tgz#034edec6ca63597fa604718824cf9e4c3acab1ac"
+  integrity sha512-ijJm+zOxHK3Chnis3y5kVzvBr21Ugyodqpz1chClNWkaR+0/BYDik+lxZVrbxZw8gxqPu8iisOceCQQC42Bkzg==
+
+"@dprint/linux-arm64-musl@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/linux-arm64-musl/-/linux-arm64-musl-0.42.5.tgz#1c07a4a434f4544f5d2d9abb19a8264e8e4f9d85"
+  integrity sha512-OLbJgv14AvJRVBi+ZCXBH0rsMSIdCZi/z1hCTRUb901VB2OVf81k5vvBn7HS5S9wMQ2HIG8GFOyckBg0qhEgAQ==
+
+"@dprint/linux-x64-glibc@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/linux-x64-glibc/-/linux-x64-glibc-0.42.5.tgz#45655993e9ad769e52118cbea3d080528b165501"
+  integrity sha512-tWh1kMbTi/lxS6hQJCDnriZonzGYN6FcN2AqF1C/TdRNjacFVvQnxZTdHPLJbgw0mSujHPinl3NtvllZ9CwVqA==
+
+"@dprint/linux-x64-musl@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/linux-x64-musl/-/linux-x64-musl-0.42.5.tgz#e05b030c1d0d6ff9e4d432f344f90cd83e1fda5c"
+  integrity sha512-GObJlhUqQpaXKRMTUUEkdYgWgS1aVyMUQZFn3dBmLycl4F2gXWxKgYB6R47ESVeejsEvE9fTTuxlpK6fOHjaKQ==
+
+"@dprint/win32-x64@0.42.5":
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/@dprint/win32-x64/-/win32-x64-0.42.5.tgz#1e640f64c1171d1d226e00f4dd2f2821afb04333"
+  integrity sha512-N2N1FlmbEFbH/WqoKGdsZplBpfq9qdhfkJHQH1poVG3KxqT0dq01oqAfnC3ZQaSBoBrBfp5GyRtj7KwCxdqxXA==
+
 "@esbuild/android-arm64@0.19.5":
   version "0.19.5"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.5.tgz#276c5f99604054d3dbb733577e09adae944baa90"
@@ -177,24 +212,24 @@
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.11.2.tgz#7539b0ad29598aa2eafee8b341059e20ac9e1006"
   integrity sha512-vRq+GniJAYSBmTRnhCYPAPq6THYqovJ/gzGThWbgEZUQaBccndGTi1hdiUP15HzEco0I6t4RCtXyX0rsSmwgPw==
 
-adwavecss@^0.0.2:
+adwavecss@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.4.tgz#92b8449c02f4e11a8fff2db02a99dbaa889b4f9e"
+  integrity sha512-6IAQhJSAvK3NN6GlIufACf7d7FRcip2TP49to/6jbH6BoNHEdhIUPHv8ZDXOnJf5vVxdeoGq09L7E5iMKuUsxQ==
+
+adwavecss@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.6.tgz#b65dd85ce7228d9b8c4ab92b4038ad0617ca58d3"
+  integrity sha512-PFsLBT3Lkh299rDPoRC/nsJdYfCIig0yVzCgsxbjrL9J2G06aACE5GPwtezdMMzI1dvGZZHOi+VSXuY5PxWVjg==
+
+adwaveui@^0.0.2:
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.2.tgz#1ddbd487b6be4ae5240e3108fcdc163c677384b9"
-  integrity sha512-aNB1y2aAfOYeYmnSwgR+gH+2lMrN85ilUAMHtQ4xCad3aj5GSWFvgJMoDIlh7F8TEgZUyNXGHmPHGnNTA1jFfw==
-
-adwavecss@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.3.tgz#233a5008b05f67b04f389bcf6f0f065e07e47dca"
-  integrity sha512-FXMkZiRGWMnh+eUETgIKUcujPzi5sAzGrU2/3zFn9yYA52d0U5S0OQBOLHVU7Iq34aYC7Z5yhp59/CfjEJQ2BA==
-
-adwaveui@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.1.tgz#712b437c0136582352953d5a199cd9aaa256887b"
-  integrity sha512-Oo3AWHqZu42+3J/sw0OEaPWTqi2CQ7GWQgrg9hujohF/ew/RXApzBsFKrzWX+044mBqCYAN5HCXNTxNeRItkSA==
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.2.tgz#8ec63113f689c1bb299ce73b26483de22f6410a7"
+  integrity sha512-cVhyfC7C5knozmANXd+f3zAc2O5d6A8vM/eISpwe0/hvhnfXjecQTI1NOt296Zz/W/zXDpJznBCrWpALoNnR1Q==
   dependencies:
-    adwavecss "^0.0.2"
-    jsxte "^3.1.5"
-    jsxte-wc "^1.1.4"
+    adwavecss "^0.0.4"
+    jsxte "^3.1.6"
+    jsxte-wc "^1.1.5"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -332,6 +367,19 @@ devlop@^1.0.0:
   dependencies:
     dequal "^2.0.0"
 
+dprint@^0.42.5:
+  version "0.42.5"
+  resolved "https://registry.yarnpkg.com/dprint/-/dprint-0.42.5.tgz#c5acba0ae558d6a834a50d97f7619b0dfc6a14c4"
+  integrity sha512-GvC3Hpsm/GKBZe6UjOZVKLb3u86puWc2lm+F+Bqgkk4fjQ9tpvZhENFra9al1rz01qfxsc3+6JZN/E9eJIME5Q==
+  optionalDependencies:
+    "@dprint/darwin-arm64" "0.42.5"
+    "@dprint/darwin-x64" "0.42.5"
+    "@dprint/linux-arm64-glibc" "0.42.5"
+    "@dprint/linux-arm64-musl" "0.42.5"
+    "@dprint/linux-x64-glibc" "0.42.5"
+    "@dprint/linux-x64-musl" "0.42.5"
+    "@dprint/win32-x64" "0.42.5"
+
 eastasianwidth@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
@@ -418,6 +466,11 @@ highlight.js@^11.9.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.9.0.tgz#04ab9ee43b52a41a047432c8103e2158a1b8b5b0"
   integrity sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==
 
+htmx.org@^1.9.6:
+  version "1.9.6"
+  resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.9.6.tgz#ed8f1f62e28699be21cbf97a161329c93595635d"
+  integrity sha512-4Zebo9nzg8u2ZHuIJmvB/nQS6kIMLIoEfhTg/oRwyCIJhL5MLA/jPU1EPEBtGOmG4ZG0k05Vpd3sab2+zfvteQ==
+
 is-binary-path@~2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-2.1.0.tgz#ea1f7f3b80f064236e83470f86c09c254fb45b09"
@@ -461,12 +514,12 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jsxte-wc@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.4.tgz#4032d4c1116d703677226d7cedb4818a18b8e198"
-  integrity sha512-XdZlIh3cwJi02+JTTsjNHBpc40sZ6K6u2rJScEpnHhZhosDkm5aTUpSuUnWHg+ltT4rdH+mTDnoKbN0y0GlrDw==
+jsxte-wc@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.5.tgz#799b71a6297d31d92c90dbad826fd5bdfebfc6ff"
+  integrity sha512-YawsSCI2zvGQJH5zaoVo9F9zeAEug+7yabVJBkKvAA+ngvTvdLUm/Bgg7oPbz9ZIY1jqjGTn6+kL7igzHXdlaQ==
 
-jsxte@^3.1.5, jsxte@^3.1.6:
+jsxte@^3.1.6:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.1.6.tgz#1f7a74af1345e12e044519a1f916b1ba7071cd1a"
   integrity sha512-9Kx5nrwBriZZ2Wu5WQA4Lxtap/gklOdvGMDaoSQZ28bU7I4FrnTBVevxklPX9TrDTKgUB0Nn+F1z7pkptcRidQ==

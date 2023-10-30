@@ -1,3 +1,4 @@
+import { Typography } from "adwavecss";
 import { Style } from "../style";
 
 export function Example(
@@ -12,7 +13,7 @@ export function Example(
         path="./example.css"
         inline
       />
-      <h2 class="header">{props.title}</h2>
+      <h2 class={Typography.header}>{props.title}</h2>
       <div class="flexbox column">{props.children}</div>
     </div>
   );
@@ -26,8 +27,8 @@ export function ExampleSection(
 ) {
   return (
     <div class="flexbox column card example-section">
-      {props.label && <p class="label">{props.label}</p>}
-      {props.description && <p class="text">{props.description}</p>}
+      {props.label && <p class={Typography.label}>{props.label}</p>}
+      {props.description && <p class={Typography.text}>{props.description}</p>}
       <div class="flexbox extend">{props.children}</div>
     </div>
   );

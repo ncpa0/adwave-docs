@@ -1,5 +1,5 @@
 import { Layout } from "../../layout";
 
 export default function ListExample() {
-  return <Layout></Layout>;
+  return <Layout activePage="list"></Layout>;
 }

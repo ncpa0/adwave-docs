@@ -2,6 +2,11 @@
   width: 75%;
 }
 
+.code-sample code {
+  font-size: 0.7em;
+  --clr-text: #f9cfff;
+}
+
 .code-sample-result {
   width: 75%;
 }

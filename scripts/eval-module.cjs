@@ -24,10 +24,15 @@ module.exports.evalModule = async function evalModule(filename, code) {
 
   const script = new vm.Script(code);
 
-  await script.runInNewContext(context, {
-    filename: filename,
-    displayErrors: true,
-  });
+  try {
+    await script.runInNewContext(context, {
+      filename: filename,
+      displayErrors: true,
+    });
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
 
   return context.module.exports;
 };

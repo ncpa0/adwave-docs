@@ -1,4 +1,6 @@
+import { Typography } from "adwavecss";
 import { ComponentApi } from "jsxte/dist/types/component-api/component-api";
+import prettier from "prettier";
 import { Style } from "../style";
 
 declare global {
@@ -11,7 +13,23 @@ declare global {
   }
 }
 
-export function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentApi: ComponentApi) {
+export async function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentApi: ComponentApi) {
+  const asString = componentApi.render(<>{props.children}</>);
+  const formatted = await prettier.format(asString, {
+    parser: "html",
+    tabWidth: 4,
+    bracketSameLine: false,
+    printWidth: 80,
+  });
+  const sanitized = formatted
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/=""/g, "")
+    .replace(/=&gt;/g, "=>")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
   return (
     <div class="contents">
       <Style
@@ -21,16 +39,13 @@ export function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentApi: Com
       />
       <div class="flexbox column code-sample-container">
         <div class="flexbox column code-sample">
-          <h3 class="text">Example:</h3>
-          <code-sample
-            copy-clipboard-button
-            type="lang-html"
-          >
-            <template preserve-content>{props.children}</template>
-          </code-sample>
+          <h3 class={Typography.text}>Example:</h3>
+          <div is="code-sample">
+            {`<pre><code class="html language-html">${sanitized}</code></pre>`}
+          </div>
         </div>
         <div class="flexbox column code-sample-result">
-          <h3 class="text">Result:</h3>
+          <h3 class={Typography.text}>Result:</h3>
           {props.children}
         </div>
       </div>

@@ -1,0 +1,13 @@
+.font-size-selector {
+  justify-content: center;
+}
+
+.font-size-selector input {
+  width: 4em;
+  text-align: center;
+  user-select: none;
+}
+
+.font-size-selector .btn {
+  padding: 0.5em 0.75em;
+}
