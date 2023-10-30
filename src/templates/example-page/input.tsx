@@ -19,11 +19,13 @@ export default function InputExample() {
                 class={cls(Input.input, Input.disabled)}
                 value="Joe"
                 disabled
-              ></input>
+              >
+              </input>
               <input
                 class={cls(Input.input)}
                 placeholder="Password"
-              ></input>
+              >
+              </input>
             </div>
           </CodeSample>
         </ExampleSection>
@@ -39,13 +41,15 @@ export default function InputExample() {
                 placeholder="Select a country"
                 suggestions="USA;Canada;Brazil;England;Germany;France;Spain;Poland;Russia;China;Japan"
                 fuzzy="true"
-              ></adw-input>
+              >
+              </adw-input>
               <adw-input
                 placeholder="Select a country"
                 suggestionsorientation="up"
                 suggestions="USA;Canada;Brazil;England;Germany;France;Spain;Poland;Russia;China;Japan"
                 fuzzy="true"
-              ></adw-input>
+              >
+              </adw-input>
             </div>
           </CodeSample>
         </ExampleSection>
@@ -54,7 +58,8 @@ export default function InputExample() {
             <adw-input
               disabled="true"
               value="This value cannot be changed"
-            ></adw-input>
+            >
+            </adw-input>
           </CodeSample>
         </ExampleSection>
       </Example>

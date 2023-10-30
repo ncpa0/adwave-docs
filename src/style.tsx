@@ -10,16 +10,16 @@ const IS_DEV = process.argv.includes("--dev");
 export const Style = async (
   props:
     | {
-        path: string;
-        dirname: string;
-        package?: never;
-        inline?: boolean;
-      }
+      path: string;
+      dirname: string;
+      package?: never;
+      inline?: boolean;
+    }
     | {
-        path?: never;
-        package: string;
-        inline?: boolean;
-      },
+      path?: never;
+      package: string;
+      inline?: boolean;
+    },
   componentApi: ComponentApi,
 ) => {
   const options: esbuild.BuildOptions = {

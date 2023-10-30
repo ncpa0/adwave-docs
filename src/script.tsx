@@ -68,17 +68,18 @@ type ScriptPropsBase = {
   buildOptions?: esbuild.BuildOptions;
 };
 
-export type ScriptProps = ScriptPropsBase &
-  (
+export type ScriptProps =
+  & ScriptPropsBase
+  & (
     | {
-        path: string;
-        dirname: string;
-        package?: never;
-      }
+      path: string;
+      dirname: string;
+      package?: never;
+    }
     | {
-        path?: never;
-        package: string;
-      }
+      path?: never;
+      package: string;
+    }
   );
 
 export const Script = async (props: ScriptProps, componentApi: ComponentApi) => {

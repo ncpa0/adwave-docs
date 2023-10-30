@@ -14,7 +14,8 @@
     "email": ""
   },
   "scripts": {
-    "build": "node ./scripts/build.cjs"
+    "build": "node ./scripts/build.cjs",
+    "fmt": "dprint fmt"
   },
   "devDependencies": {
     "@types/node": "^18",

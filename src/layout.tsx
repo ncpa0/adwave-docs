@@ -44,10 +44,12 @@ const CodeSampleScript = () => {
         path="./components/code-sample.client.ts"
         type="iife"
       />
-      {/* <Script
+      {
+        /* <Script
         package="@kuscamara/code-sample"
         buildOptions={buildOptions}
-      /> */}
+      /> */
+      }
     </>
   );
 };
@@ -75,7 +77,8 @@ export function Layout(
           src="https://unpkg.com/htmx.org@1.9.6"
           integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
           crossorigin="anonymous"
-        ></script>
+        >
+        </script>
         <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
         <Style
           dirname={__dirname}
