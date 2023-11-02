@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@kuscamara/code-sample": "^3.0.2",
-    "adwavecss": "^0.0.6",
+    "adwavecss": "^0.0.7",
     "adwaveui": "^0.0.2",
     "highlight.js": "^11.9.0"
   }
