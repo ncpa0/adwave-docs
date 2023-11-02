@@ -15,6 +15,7 @@ body {
   margin: unset;
   font-size: 20px;
   min-height: 100vh;
+  display: block !important;
 }
 
 #root {

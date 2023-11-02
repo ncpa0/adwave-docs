@@ -51,6 +51,8 @@ async function build() {
       return buildTemplate(tmpl, outDir);
     }),
   );
+
+  await fs.promises.cp(p("src/assets"), path.join(outDir, "assets"), { recursive: true });
 }
 
 const watch = process.argv.includes("--watch");
@@ -70,6 +72,17 @@ build()
         .watch(p("src"), { alwaysStat: false, ignoreInitial: true, useFsEvents: true })
         .on("all", (ev, fPath, stats) => {
           if (ev === "addDir") return;
+
+          if (fPath.includes("src/assets")) {
+            console.log(`Asset changed, copying (${path.relative(p("."), fPath)})`);
+            const rel = path.relative(p("src/assets"), fPath);
+            fs.promises.cp(fPath, path.join(p("docs/assets"), rel), {
+              recursive: true,
+            }).catch((e) => {
+              console.error(e);
+            });
+            return;
+          }
 
           console.log(`File changed, recompiling (${path.relative(p("."), fPath)})`);
 

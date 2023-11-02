@@ -14,29 +14,29 @@ export default function ButtonExample() {
         <Example title="Button">
           <ExampleSection label="Regular Button">
             <CodeSample>
-              <button class={cls(Button.button, "button-example")}>Button</button>
+              <button class={cls(Button.button)}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Primary Button">
             <CodeSample>
-              <button class={cls(Button.button, Button.primary, "button-example")}>Button</button>
+              <button class={cls(Button.button, Button.primary)}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Danger Button">
             <CodeSample>
-              <button class={cls(Button.button, Button.danger, "button-example")}>Button</button>
+              <button class={cls(Button.button, Button.danger)}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Flat Button">
             <CodeSample>
-              <button class={cls(Button.button, Button.flat, "button-example")}>Button</button>
+              <button class={cls(Button.button, Button.flat)}>Button</button>
             </CodeSample>
           </ExampleSection>
           <ExampleSection label="Cicrular and Square Buttons">
             <CodeSample>
               <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center;">
-                <button class={cls(Button.button, Button.circular, "button-example")}>...</button>
-                <button class={cls(Button.button, Button.square, "button-example")}>...</button>
+                <button class={cls(Button.button, Button.circular)}>...</button>
+                <button class={cls(Button.button, Button.square)}>...</button>
               </div>
             </CodeSample>
           </ExampleSection>

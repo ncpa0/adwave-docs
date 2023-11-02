@@ -85,14 +85,23 @@ export function Layout(
           path="./index.css"
         />
         <Style package="adwavecss/dist/styles.css" />
-        <Style package="highlight.js/styles/an-old-hope.css" />
+        <Script
+          dirname={__dirname}
+          path="./hljs-theme-loader.client.ts"
+          type="iife"
+          buildOptions={{
+            loader: {
+              ".css": "text",
+            },
+          }}
+        />
         <Script package="adwaveui" />
         <CodeSampleScript />
       </head>
-      <body hx-ext="preload">
+      <body hx-ext="preload" class={cls(Box.box, Theme.dark)}>
         <div
           id="root"
-          class={cls(Box.box, Theme.dark)}
+          class={Box.box}
         >
           <div class="flexbox">
             <Navbar activePage={props.activePage} />

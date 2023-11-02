@@ -1,8 +1,19 @@
-const root = document.querySelector("#root")!;
-let currentTheme = localStorage.getItem("theme") ?? document.body.classList.item(0) ?? "dark-theme";
+declare global {
+  type Theme = "dark-theme" | "light-theme";
+
+  interface Window {
+    __current_theme: Theme;
+  }
+}
+
+export {};
+
+const root = document.body;
+let currentTheme: Theme = localStorage.getItem("theme") as Theme ?? document.body.classList.item(0) as Theme
+  ?? "dark-theme";
 const buttonList = document.querySelectorAll(".theme-switcher button");
 
-function changeTheme(theme: string) {
+function changeTheme(theme: Theme) {
   root.classList.remove(currentTheme);
   root.classList.add(theme);
   currentTheme = theme;
@@ -16,6 +27,13 @@ function changeTheme(theme: string) {
       btn.classList.add("toggled");
     }
   }
+
+  window.__current_theme = theme;
+  window.dispatchEvent(
+    new CustomEvent("theme-change", {
+      detail: { theme },
+    }),
+  );
 }
 
 root.classList.forEach((c) => {
@@ -28,7 +46,7 @@ changeTheme(currentTheme);
 for (let i = 0; i < buttonList.length; i++) {
   const btn = buttonList.item(i) as HTMLButtonElement;
 
-  const theme = btn.dataset.theme;
+  const theme = btn.dataset.theme as Theme | undefined;
 
   if (theme) {
     btn.addEventListener("click", () => {

@@ -13,7 +13,10 @@ export default function BoxExample() {
     >
       <div class="flexbox">
         <Example title="Box">
-          <ExampleSection description="Box is a simple container element that by default comes with a flex display type.">
+          <ExampleSection
+            label="Box"
+            description="Box is a simple container element that by default comes with a flex display type."
+          >
             <CodeSample>
               <style>
                 {css`

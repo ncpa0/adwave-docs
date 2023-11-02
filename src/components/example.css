@@ -1,15 +1,47 @@
 .example-section {
-  min-width: calc(70vw - 200px);
-  max-width: calc(90vw - 200px);
+  width: calc(85vw - 200px);
   align-items: center;
   padding-bottom: 2em;
 }
 
 .example-section p {
   place-self: flex-start;
-  margin-left: 12.5%;
+  margin-left: calc(12.5%);
+  max-width: 75%;
+}
+
+.example-section h5 {
+  place-self: flex-start;
+  margin-left: calc(12.5% - 0.7 * 2.85em);
+  max-width: 75%;
+  margin-bottom: 0px;
 }
 
 .example-section:not(:last-child) {
   margin-bottom: 2em;
+}
+
+.example-section h5 {
+  display: flex;
+  align-items: center;
+}
+
+.header-anchor.header-anchor {
+  font-size: 0.7em;
+  object-fit: contain;
+  margin-right: 0.35em;
+  padding: 4px;
+}
+
+#link-light,
+#link-dark {
+  display: none;
+}
+
+.light-theme .header-anchor #link-light {
+  display: block;
+}
+
+.dark-theme .header-anchor #link-dark {
+  display: block;
 }
