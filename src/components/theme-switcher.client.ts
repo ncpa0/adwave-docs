@@ -8,10 +8,19 @@ declare global {
 
 export {};
 
-const root = document.body;
-let currentTheme: Theme = localStorage.getItem("theme") as Theme ?? document.body.classList.item(0) as Theme
-  ?? "dark-theme";
-const buttonList = document.querySelectorAll(".theme-switcher button");
+function getCurrentTheme(): Theme {
+  const localStorageTheme = localStorage.getItem("theme") as Theme | null;
+  if (localStorageTheme) {
+    return localStorageTheme;
+  }
+
+  const theme = Array.from(document.body.classList.values()).find(c => c.endsWith("theme"));
+  if (theme) {
+    return theme as Theme;
+  }
+
+  return "dark-theme";
+}
 
 function changeTheme(theme: Theme) {
   root.classList.remove(currentTheme);
@@ -36,11 +45,10 @@ function changeTheme(theme: Theme) {
   );
 }
 
-root.classList.forEach((c) => {
-  if (c.includes("theme")) {
-    root.classList.remove(c);
-  }
-});
+const root = document.body;
+let currentTheme = getCurrentTheme();
+const buttonList = document.querySelectorAll(".theme-switcher button");
+
 changeTheme(currentTheme);
 
 for (let i = 0; i < buttonList.length; i++) {

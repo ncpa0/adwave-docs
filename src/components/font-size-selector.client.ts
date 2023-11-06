@@ -1,8 +1,9 @@
 class FontSizeSelector extends HTMLDivElement {
-  currentFontSize = 20;
+  currentFontSize = 16;
   previewElement!: HTMLInputElement;
 
   connectedCallback() {
+    const browserDefault = this.currentFontSize = this.getBrowserDefaultFontSize();
     this.loadFromLocalStorage();
 
     const btnDecrease = this.querySelector("#btn-decrease")!;
@@ -12,7 +13,18 @@ class FontSizeSelector extends HTMLDivElement {
     btnDecrease.addEventListener("click", this.handleDecrease);
     btnIncrease.addEventListener("click", this.handleIncrease);
 
-    this.setFontSize(this.currentFontSize);
+    if (browserDefault !== this.currentFontSize) {
+      this.setFontSize(this.currentFontSize);
+    } else {
+      this.setSizePreview(this.currentFontSize);
+    }
+  }
+
+  getBrowserDefaultFontSize() {
+    const html = document.querySelector("html")!;
+    const computedStyle = getComputedStyle(html);
+    const fontSize = computedStyle.getPropertyValue("font-size");
+    return parseFloat(fontSize);
   }
 
   loadFromLocalStorage() {
@@ -28,8 +40,12 @@ class FontSizeSelector extends HTMLDivElement {
 
   setFontSize(fontSize: number) {
     this.currentFontSize = fontSize;
-    this.saveToLocalStorage();
     document.body.style.fontSize = this.currentFontSize + "px";
+    this.setSizePreview(this.currentFontSize);
+    this.saveToLocalStorage();
+  }
+
+  setSizePreview(fontSize: number) {
     this.previewElement.value = `${this.currentFontSize}px`;
   }
 
