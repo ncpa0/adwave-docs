@@ -57,21 +57,18 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     throw new Error(`Template ${tsxFilename} does not export a default function.`);
   }
 
-  await fs.promises.mkdir(path.join(outDir, "css"), { recursive: true });
-  await fs.promises.mkdir(path.join(outDir, "js"), { recursive: true });
-
   /** @type {{ contents: string; outFile: string }[]} */
   const registeredExtFiles = [];
   const registerExternalFile = (contents, name, type) => {
     const hashedName = createHash(`${name}_${contents}`, 8);
     switch (type) {
       case "css": {
-        const fPath = `/css/${hashedName}.css`;
+        const fPath = `/assets/css/${hashedName}.css`;
         registeredExtFiles.push({ contents, outFile: path.join(outDir, fPath) });
         return fPath;
       }
       case "js": {
-        const fPath = `/js/${hashedName}.js`;
+        const fPath = `/assets/js/${hashedName}.js`;
         registeredExtFiles.push({ contents, outFile: path.join(outDir, fPath) });
         return fPath;
       }

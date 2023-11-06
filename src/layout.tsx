@@ -4,6 +4,7 @@ import { Navbar } from "./components/navbar";
 import { Script } from "./script";
 import { Style } from "./style";
 import { cls } from "./utils/cls";
+import { url } from "./utils/url";
 
 declare global {
   namespace JSXTE {
@@ -85,6 +86,18 @@ export function Layout(
           path="./index.css"
         />
         <Style package="adwavecss/dist/styles.css" />
+        <Script
+          dirname={__dirname}
+          path="./service-workers/register.client.ts"
+          type="iife"
+          buildOptions={{
+            define: {
+              SERVICE_WORKERS: JSON.stringify([
+                url("request-cache.sw.js"),
+              ]),
+            },
+          }}
+        />
         <Script
           dirname={__dirname}
           path="./hljs-theme-loader.client.ts"
