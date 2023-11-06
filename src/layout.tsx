@@ -1,5 +1,4 @@
 import { Box, Theme } from "adwavecss";
-import { PluginBuild } from "esbuild";
 import { Navbar } from "./components/navbar";
 import { Script } from "./script";
 import { Style } from "./style";
@@ -13,47 +12,6 @@ declare global {
     }
   }
 }
-
-const CodeSampleScript = () => {
-  const replaceHljsPlugin = {
-    name: "replaceHljsPlugin",
-    setup(build: PluginBuild) {
-      build.onLoad({ filter: new RegExp(/.+highlight\.pack\.js/) }, () => {
-        return {
-          contents: "",
-        };
-      });
-    },
-  };
-
-  const buildOptions = {
-    define: {
-      "hljs.highlightBlock": "HighlightJS.highlightElement",
-      hljs: "HighlightJS",
-    },
-    plugins: [replaceHljsPlugin],
-  };
-
-  return (
-    <>
-      <Script
-        package="highlight.js"
-        type="global"
-      />
-      <Script
-        dirname={__dirname}
-        path="./components/code-sample.client.ts"
-        type="iife"
-      />
-      {
-        /* <Script
-        package="@kuscamara/code-sample"
-        buildOptions={buildOptions}
-      /> */
-      }
-    </>
-  );
-};
 
 export function Layout(
   props: JSXTE.PropsWithChildren<{
@@ -74,13 +32,6 @@ export function Layout(
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
-        <script
-          src="https://unpkg.com/htmx.org@1.9.6"
-          integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
-          crossorigin="anonymous"
-        >
-        </script>
-        <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
         <Style
           dirname={__dirname}
           path="./index.css"
@@ -108,8 +59,18 @@ export function Layout(
             },
           }}
         />
-        <Script package="adwaveui" />
-        <CodeSampleScript />
+        <Script
+          dirname={__dirname}
+          path="./components/code-sample.client.ts"
+          type="iife"
+        />
+        <Script
+          package="highlight.js"
+          type="global"
+        />
+        <Script package="adwaveui" type="iife" />
+        <Script package="htmx.org" type="iife" />
+        <Script package="htmx.org/dist/ext/preload" type="iife" />
       </head>
       <body hx-ext="preload" class={cls(Box.box, Theme.dark)}>
         <div

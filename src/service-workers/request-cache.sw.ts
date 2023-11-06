@@ -9,13 +9,8 @@ const cacheFirst = new CacheFirst({
     ignoreSearch: true,
   },
   plugins: [
-    // This plugin will read the cache entries and return the first
-    // response that has a status code of 200.
-    // new CacheableResponsePlugin({
-    //   statuses: [200],
-    // }),
     new ExpirationPlugin({
-      maxAgeSeconds: 600,
+      maxAgeSeconds: 30 * 60, // 30 minutes
     }),
   ],
 });
@@ -27,11 +22,6 @@ const foreverCache = new CacheFirst({
     ignoreSearch: true,
   },
   plugins: [
-    // This plugin will read the cache entries and return the first
-    // response that has a status code of 200.
-    // new CacheableResponsePlugin({
-    //   statuses: [200],
-    // }),
     new ExpirationPlugin({
       maxAgeSeconds: 60 * 60 * 24 * 365,
     }),

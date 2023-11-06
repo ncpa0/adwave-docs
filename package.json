@@ -23,7 +23,7 @@
     "chokidar": "^3.5.3",
     "dprint": "^0.42.5",
     "esbuild": "^0.19.5",
-    "htmx.org": "^1.9.6",
+    "htmx.org": "^1.9.7",
     "jsxte": "^3.1.6",
     "node-os-walk": "^1.0.2",
     "prettier": "^3.0.3",
