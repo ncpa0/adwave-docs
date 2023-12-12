@@ -4,6 +4,7 @@
   left: 0;
   height: 100vh;
   margin: 0px 0.3em;
+  width: clamp(200px, 20vw, 320px);
 }
 
 .left-navbar > .nav-sidebar {
@@ -19,7 +20,6 @@
 }
 
 .nav-sidebar.nav-sidebar {
-  width: 14em;
   justify-content: flex-start;
 }
 
@@ -36,4 +36,53 @@
 a.navbar-link,
 a.navbar-link button {
   cursor: pointer;
+}
+
+@media (max-width: 829px) {
+  .left-navbar.left-navbar {
+    display: none;
+  }
+
+  .left-navbar-mobile.left-navbar-mobile {
+    display: block;
+  }
+
+  .navbar-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+}
+
+.left-navbar-mobile {
+  display: none;
+  width: 100vw;
+  z-index: 10;
+}
+
+.left-navbar-mobile dialog {
+  border: unset;
+  margin: unset;
+  padding: unset;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #2121214f;
+}
+
+.navbar-overlay-backdrop {
+  flex: 1;
+}
+
+/* .left-navbar-mobile dialog .dialog-container {
+  display: flex;
+  flex
+} */
+
+.left-navbar-mobile-overlay {
+  width: 65vw;
+  min-height: 100vh;
+}
+
+.navbar-mobile-btn {
+  margin: 0.3em;
 }

@@ -6,6 +6,16 @@
   width: 75%;
 }
 
+@media (max-width: 829px) {
+  .code-sample {
+    width: 95%;
+  }
+
+  .code-sample-result {
+    width: 95%;
+  }
+}
+
 .code-sample-result .result-content {
   margin-left: 0.75em;
   margin-right: 0.75em;
@@ -15,4 +25,5 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  max-width: 100%;
 }

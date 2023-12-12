@@ -1,13 +1,35 @@
 .example-section {
-  width: calc(85vw - 200px);
+  width: clamp(550px, 65vw, 80vw);
   align-items: center;
   padding-bottom: 2em;
+}
+
+.example-section-content {
+  max-width: 100%;
 }
 
 .example-section p {
   place-self: flex-start;
   margin-left: calc(12.5%);
   max-width: 75%;
+}
+
+@media (max-width: 829px) {
+  .example-section.example-section {
+    width: clamp(350px, 80vw, 95vw);
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+  }
+
+  .example-section.example-section p {
+    margin-left: calc(12.5% - 0.7 * 2.85em);
+    max-width: 95%;
+  }
+
+  .example-section.example-section h5 {
+    max-width: 95%;
+    margin-top: 0.2em;
+  }
 }
 
 .example-section h5 {

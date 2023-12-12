@@ -21,6 +21,12 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 829px) {
+  #root {
+    flex-direction: column;
+  }
+}
+
 .flexbox {
   display: flex;
 }
@@ -30,9 +36,9 @@ body {
 }
 
 #example-view {
-  width: calc(100% - 200px);
   justify-content: center;
   margin-bottom: 2em;
+  flex: 1;
 }
 
 .contents {
@@ -42,4 +48,10 @@ body {
 .extend {
   flex-grow: 1;
   place-self: stretch;
+}
+
+@media (max-width: 829px) {
+  .input {
+    max-width: 50vw;
+  }
 }

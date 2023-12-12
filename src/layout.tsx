@@ -77,7 +77,7 @@ export function Layout(
           id="root"
           class={Box.box}
         >
-          <div class="flexbox">
+          <div class="flexbox navbar-container">
             <Navbar activePage={props.activePage} />
           </div>
           <div

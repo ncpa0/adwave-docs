@@ -54,7 +54,7 @@ export function ExampleSection(
         </h5>
       )}
       {props.description && <p class={Typography.text}>{props.description}</p>}
-      <div class="flexbox extend">{props.children}</div>
+      <div class="flexbox extend example-section-content">{props.children}</div>
     </div>
   );
 }
