@@ -16,7 +16,7 @@ export function Example(
         inline
       />
       <h2 class={Typography.header}>{props.title}</h2>
-      <div class="flexbox column">{props.children}</div>
+      <div class="flexbox column align-center">{props.children}</div>
     </div>
   );
 }

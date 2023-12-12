@@ -35,6 +35,14 @@ body {
   flex-direction: column;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
 #example-view {
   justify-content: center;
   margin-bottom: 2em;

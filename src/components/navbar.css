@@ -73,13 +73,8 @@ a.navbar-link button {
   flex: 1;
 }
 
-/* .left-navbar-mobile dialog .dialog-container {
-  display: flex;
-  flex
-} */
-
 .left-navbar-mobile-overlay {
-  width: 65vw;
+  width: clamp(10em, 65vw, 85vw);
   min-height: 100vh;
 }
 

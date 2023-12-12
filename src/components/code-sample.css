@@ -19,6 +19,7 @@
 .code-sample-result .result-content {
   margin-left: 0.75em;
   margin-right: 0.75em;
+  overflow: scroll;
 }
 
 .code-sample-container {
