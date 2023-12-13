@@ -63,3 +63,24 @@ body {
     max-width: 50vw;
   }
 }
+
+code.hljs::-webkit-scrollbar {
+  background-color: #0000;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--border-radius);
+}
+
+code.hljs::-webkit-scrollbar-track {
+  margin: 6px;
+  border-radius: var(--border-radius);
+}
+
+code.hljs::-webkit-scrollbar-thumb {
+  background-color: var(--clr-bg-4);
+  border-radius: var(--border-radius);
+}
+
+code.hljs::-webkit-scrollbar-track:hover {
+  background-color: color-mix(in srgb, var(--clr-bg-4), transparent 70%);
+}

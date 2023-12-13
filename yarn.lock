@@ -212,15 +212,15 @@
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.11.2.tgz#7539b0ad29598aa2eafee8b341059e20ac9e1006"
   integrity sha512-vRq+GniJAYSBmTRnhCYPAPq6THYqovJ/gzGThWbgEZUQaBccndGTi1hdiUP15HzEco0I6t4RCtXyX0rsSmwgPw==
 
+adwavecss@0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.9.tgz#23970f8704ac889cfe951c8c66af577c44e26e1a"
+  integrity sha512-vQHGkvgz06quYVyU8JNemFv1tbe7AHBfbCHgxzXHKlrlvBFezZBbjwRvw5dPrby0WqS9vrC8X3fSyK+SC/UUQw==
+
 adwavecss@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.4.tgz#92b8449c02f4e11a8fff2db02a99dbaa889b4f9e"
   integrity sha512-6IAQhJSAvK3NN6GlIufACf7d7FRcip2TP49to/6jbH6BoNHEdhIUPHv8ZDXOnJf5vVxdeoGq09L7E5iMKuUsxQ==
-
-adwavecss@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.7.tgz#b668d25c5f938d83f1fabd091b563debf923f95f"
-  integrity sha512-maCy3xyGkNb5XqKRPQ+RAZbnpWxbb8KLdYbmVTj31gAhvl9sJU+ulpAjMNqCVNLVUykvolZTbo1JhdVPM28eeQ==
 
 adwaveui@^0.0.2:
   version "0.0.2"

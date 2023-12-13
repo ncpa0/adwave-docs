@@ -1,7 +1,6 @@
 import { Typography } from "adwavecss";
 import { ComponentApi } from "jsxte/dist/types/component-api/component-api";
 import prettier from "prettier";
-import { Style } from "../style";
 
 declare global {
   namespace JSX {
@@ -32,11 +31,6 @@ export async function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentAp
 
   return (
     <div class="contents">
-      <Style
-        dirname={__dirname}
-        path="./code-sample.css"
-        inline
-      />
       <div class="flexbox column code-sample-container">
         <div class="flexbox column code-sample">
           <h3 class={Typography.text}>Example:</h3>

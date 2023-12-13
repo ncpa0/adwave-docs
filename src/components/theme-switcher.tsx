@@ -1,16 +1,10 @@
 import { Button, Input } from "adwavecss";
 import { Script } from "../script";
-import { Style } from "../style";
 import { cls } from "../utils/cls";
 
 export function ThemeSwitcher() {
   return (
     <>
-      <Style
-        dirname={__dirname}
-        path="./theme-switcher.css"
-        inline
-      />
       <div class={cls(Input.linked, "flexbox theme-switcher")}>
         <button
           class={cls(Button.button, Button.toggled)}

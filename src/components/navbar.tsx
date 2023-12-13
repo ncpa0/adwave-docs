@@ -1,6 +1,5 @@
 import { Box, NavSidebar } from "adwavecss";
 import { Script } from "../script";
-import { Style } from "../style";
 import { cls } from "../utils/cls";
 import { url } from "../utils/url";
 import { FontSizeSelector } from "./font-size-selector";
@@ -152,10 +151,6 @@ const LeftNavbarMobile = (props: { activePage?: string }) => {
 export const Navbar = (props: { activePage?: string }) => {
   return (
     <div class={cls(Box.box, "bg-level-2")}>
-      <Style
-        dirname={__dirname}
-        path="./navbar.css"
-      />
       <LeftNavbarDesktop activePage={props.activePage} />
       <LeftNavbarMobile activePage={props.activePage} />
       <Script

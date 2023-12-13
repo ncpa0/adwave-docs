@@ -37,6 +37,26 @@ export function Layout(
           path="./index.css"
         />
         <Style package="adwavecss/dist/styles.css" />
+        <Style
+          dirname={__dirname}
+          path="./components/code-sample.css"
+        />
+        <Style
+          dirname={__dirname}
+          path="./components/example.css"
+        />
+        <Style
+          dirname={__dirname}
+          path="./components/font-size-selector.css"
+        />
+        <Style
+          dirname={__dirname}
+          path="./components/navbar.css"
+        />
+        <Style
+          dirname={__dirname}
+          path="./components/theme-switcher.css"
+        />
         <Script
           dirname={__dirname}
           path="./service-workers/register.client.ts"

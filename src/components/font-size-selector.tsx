@@ -1,15 +1,10 @@
 import { Button, Input } from "adwavecss";
 import { Script } from "../script";
-import { Style } from "../style";
 import { cls } from "../utils/cls";
 
 export const FontSizeSelector = () => {
   return (
     <>
-      <Style
-        dirname={__dirname}
-        path="./font-size-selector.css"
-      />
       <div
         is="font-size-selector"
         class={cls("flexbox", "font-size-selector", Input.linked)}

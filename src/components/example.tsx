@@ -1,5 +1,4 @@
 import { Button, Typography } from "adwavecss";
-import { Style } from "../style";
 import { cls } from "../utils/cls";
 import { url } from "../utils/url";
 
@@ -10,11 +9,6 @@ export function Example(
 ) {
   return (
     <div class="flexbox column">
-      <Style
-        dirname={__dirname}
-        path="./example.css"
-        inline
-      />
       <h2 class={Typography.header}>{props.title}</h2>
       <div class="flexbox column align-center">{props.children}</div>
     </div>
