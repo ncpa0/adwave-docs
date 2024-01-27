@@ -18,13 +18,7 @@ async function build() {
   const outDir = p("docs");
 
   if (process.argv.includes("--clean")) {
-    const outDirFiles = await fs.promises.readdir(outDir);
-
-    await Promise.all(
-      outDirFiles.map((f) => {
-        return rimraf.rimraf(path.join(outDir, f));
-      }),
-    );
+    await rimraf.rimraf(outDir);
   }
 
   /** @type {Template[]} */
