@@ -2,6 +2,8 @@ import { ExpirationPlugin } from "workbox-expiration";
 import { registerRoute, Route } from "workbox-routing";
 import { CacheFirst } from "workbox-strategies";
 
+declare const __DEV__: string;
+
 const cacheFirst = new CacheFirst({
   cacheName: "cache-first",
   matchOptions: {
@@ -45,12 +47,14 @@ const imagesRoute = new Route(({ url }) => {
   return url.pathname.endsWith(".svg");
 }, foreverCache);
 
-registerRoute(pagesRoute);
-registerRoute(jsRoute);
-registerRoute(cssRoute);
-registerRoute(imagesRoute);
+if (__DEV__ === "false") {
+  registerRoute(pagesRoute);
+  registerRoute(jsRoute);
+  registerRoute(cssRoute);
+  registerRoute(imagesRoute);
+}
 
-self.addEventListener("activate", function(event) {
+self.addEventListener("activate", function() {
   // @ts-expect-error
   return self.clients.claim();
 });
