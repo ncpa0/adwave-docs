@@ -7,7 +7,6 @@ const { evalModule } = require("./eval-module.cjs");
 const { changeExt } = require("./change-ext.cjs");
 const { ExtFilesCtx } = require("./external-files-context.cjs");
 const crypto = require("crypto");
-const prettier = require("prettier");
 
 function createHash(data, len) {
   return crypto.createHash("shake256", { outputLength: len }).update(data).digest("hex");
@@ -79,11 +78,6 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     jsx(ExtFilesCtx.Provider, { value: { register: registerExternalFile } }, jsx(Component, {})),
   );
 
-  const prettifiedHtml = await prettier.format(html, {
-    parser: "html",
-    embeddedLanguageFormatting: "off",
-  });
-
   const htmlRel = path.relative(templatesSrc, tsxFilename);
   const htmlOutFile = changeExt(path.join(outDir, htmlRel), "html");
 
@@ -91,7 +85,7 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
 
   // make sure directory exists
   await fs.promises.mkdir(baseDir, { recursive: true });
-  await fs.promises.writeFile(htmlOutFile, prettifiedHtml, "utf8");
+  await fs.promises.writeFile(htmlOutFile, html, "utf8");
 
   await Promise.all(
     registeredExtFiles.map(({ contents, outFile }) => {

@@ -537,10 +537,10 @@ jsxte-wc@^1.1.5:
   resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.5.tgz#799b71a6297d31d92c90dbad826fd5bdfebfc6ff"
   integrity sha512-YawsSCI2zvGQJH5zaoVo9F9zeAEug+7yabVJBkKvAA+ngvTvdLUm/Bgg7oPbz9ZIY1jqjGTn6+kL7igzHXdlaQ==
 
-jsxte@^3.1.10-canary-99ea1f5a68f7eb363806037de4af6c5d92ba600b.0:
-  version "3.1.10-canary-99ea1f5a68f7eb363806037de4af6c5d92ba600b.0"
-  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.1.10-canary-99ea1f5a68f7eb363806037de4af6c5d92ba600b.0.tgz#a19266485e6ba5a53f7e494c8529537e952c126c"
-  integrity sha512-iujg5M8ECjQAIr8S4jOgYoTX2zfwChnEIW9lArdjzsT8LYbUTevyc/UTNo9tTu5/VTMZUERj1XrN7cce5S4bYw==
+jsxte@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.2.0.tgz#9722fa3b15efea9a87351af2977889f6a85d1770"
+  integrity sha512-mh0HjcFfLBwfvYj3UwvpStvKT7Icq71sNHZlk8+mT0dunnuk6aPNZ/iHe/BtuWDEQp7XID1NpmeXxLn6YEMiSw==
 
 jsxte@^3.1.6:
   version "3.1.6"

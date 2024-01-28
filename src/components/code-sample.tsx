@@ -35,7 +35,7 @@ export async function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentAp
         <div class="flexbox column code-sample">
           <h3 class={Typography.text}>Example:</h3>
           <div is="code-sample">
-            {`<pre><code class="html language-html frame">${sanitized}</code></pre>`}
+            <pre>{`<code class="html language-html frame">${sanitized}</code>`}</pre>
           </div>
         </div>
         <div class="flexbox column code-sample-result">
