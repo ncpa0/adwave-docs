@@ -13,13 +13,13 @@ declare global {
 }
 
 export async function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentApi: ComponentApi) {
-  const asString = componentApi.render(<>{props.children}</>);
-  const formatted = await prettier.format(asString, {
+  const asString = componentApi.render(<>{props.children}</>, { pretty: true });
+  const formatted = (await prettier.format(asString, {
     parser: "html",
     tabWidth: 4,
     bracketSameLine: false,
     printWidth: 80,
-  });
+  })).replace(/(\s+)></g, ">$1<").replace(/(\s+)>(\w)/g, ">$1$2");
   const sanitized = formatted
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")

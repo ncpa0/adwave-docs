@@ -76,6 +76,7 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
 
   const html = await renderToHtmlAsync(
     jsx(ExtFilesCtx.Provider, { value: { register: registerExternalFile } }, jsx(Component, {})),
+    { pretty: true },
   );
 
   const htmlRel = path.relative(templatesSrc, tsxFilename);

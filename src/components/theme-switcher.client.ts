@@ -8,12 +8,22 @@ declare global {
 
 export {};
 
-function getCurrentTheme(): Theme {
-  const localStorageTheme = localStorage.getItem("theme") as Theme | null;
-  if (localStorageTheme) {
-    return localStorageTheme;
+class PersistentStorage {
+  private static THEME_KEY = "theme";
+
+  public static getTheme() {
+    const localStorageTheme = localStorage.getItem(this.THEME_KEY) as Theme | null;
+    if (localStorageTheme) {
+      return localStorageTheme;
+    }
   }
 
+  public static setTheme(theme: Theme) {
+    localStorage.setItem(this.THEME_KEY, theme);
+  }
+}
+
+function getCurrentTheme(): Theme {
   const theme = Array.from(document.body.classList.values()).find(c => c.endsWith("theme"));
   if (theme) {
     return theme as Theme;
@@ -26,7 +36,7 @@ function changeTheme(theme: Theme) {
   root.classList.remove(currentTheme);
   root.classList.add(theme);
   currentTheme = theme;
-  localStorage.setItem("theme", theme);
+  PersistentStorage.setTheme(theme);
   for (let i = 0; i < buttonList.length; i++) {
     const btn = buttonList.item(i) as HTMLButtonElement;
     const btnTheme = btn.dataset.theme;
@@ -47,9 +57,10 @@ function changeTheme(theme: Theme) {
 
 const root = document.body;
 let currentTheme = getCurrentTheme();
+const initialTheme = PersistentStorage.getTheme() ?? currentTheme;
 const buttonList = document.querySelectorAll(".theme-switcher button");
 
-changeTheme(currentTheme);
+changeTheme(initialTheme);
 
 for (let i = 0; i < buttonList.length; i++) {
   const btn = buttonList.item(i) as HTMLButtonElement;

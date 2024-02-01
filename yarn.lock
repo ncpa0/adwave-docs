@@ -537,10 +537,10 @@ jsxte-wc@^1.1.5:
   resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.5.tgz#799b71a6297d31d92c90dbad826fd5bdfebfc6ff"
   integrity sha512-YawsSCI2zvGQJH5zaoVo9F9zeAEug+7yabVJBkKvAA+ngvTvdLUm/Bgg7oPbz9ZIY1jqjGTn6+kL7igzHXdlaQ==
 
-jsxte@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.2.0.tgz#9722fa3b15efea9a87351af2977889f6a85d1770"
-  integrity sha512-mh0HjcFfLBwfvYj3UwvpStvKT7Icq71sNHZlk8+mT0dunnuk6aPNZ/iHe/BtuWDEQp7XID1NpmeXxLn6YEMiSw==
+jsxte@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.3.0.tgz#d8e4639dd926d214421d67c155e14b285c4f50f1"
+  integrity sha512-ucIUALv8L5UXb87SRm2r1eR1wH7d/x9UV3lhonDNgwhcdEKhQaVUkAh0ATgGk8iFODUaEnYUnSvRdAKb2LICcA==
 
 jsxte@^3.1.6:
   version "3.1.6"
