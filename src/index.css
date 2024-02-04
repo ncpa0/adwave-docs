@@ -84,3 +84,7 @@ code.hljs::-webkit-scrollbar-thumb {
 code.hljs::-webkit-scrollbar-track:hover {
   background-color: color-mix(in srgb, var(--clr-bg-4), transparent 70%);
 }
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}

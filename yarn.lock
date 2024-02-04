@@ -212,23 +212,18 @@
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.11.2.tgz#7539b0ad29598aa2eafee8b341059e20ac9e1006"
   integrity sha512-vRq+GniJAYSBmTRnhCYPAPq6THYqovJ/gzGThWbgEZUQaBccndGTi1hdiUP15HzEco0I6t4RCtXyX0rsSmwgPw==
 
-adwavecss@0.0.10:
+adwavecss@0.0.10, adwavecss@>0.0.4:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.10.tgz#838652da027cfb873f61460154489080ee3dfba7"
   integrity sha512-yTBggfHOPK3Da3F+PnGaUc1vHQ8c3a06zcvtTWI50pzPSUjCeSXM9QLiDx5F9/WxynqvMzOZ0AMEIPSho099fQ==
 
-adwavecss@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.0.4.tgz#92b8449c02f4e11a8fff2db02a99dbaa889b4f9e"
-  integrity sha512-6IAQhJSAvK3NN6GlIufACf7d7FRcip2TP49to/6jbH6BoNHEdhIUPHv8ZDXOnJf5vVxdeoGq09L7E5iMKuUsxQ==
-
-adwaveui@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.2.tgz#8ec63113f689c1bb299ce73b26483de22f6410a7"
-  integrity sha512-cVhyfC7C5knozmANXd+f3zAc2O5d6A8vM/eISpwe0/hvhnfXjecQTI1NOt296Zz/W/zXDpJznBCrWpALoNnR1Q==
+adwaveui@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.0.3.tgz#23ebe8914c3c752cf12ded76cbc1fee1b8303701"
+  integrity sha512-RjYmc0FDf9vHxUqHPVZxuAlMbQwaEE/2AcWDGqE26X3x255eWINZecjkEGrcbXVXXyRMMZfaN8ZVg2gh4GbUDA==
   dependencies:
-    adwavecss "^0.0.4"
-    jsxte "^3.1.6"
+    adwavecss ">0.0.4"
+    jsxte "^3.3.0"
     jsxte-wc "^1.1.5"
 
 ansi-regex@^5.0.1:
@@ -537,15 +532,10 @@ jsxte-wc@^1.1.5:
   resolved "https://registry.yarnpkg.com/jsxte-wc/-/jsxte-wc-1.1.5.tgz#799b71a6297d31d92c90dbad826fd5bdfebfc6ff"
   integrity sha512-YawsSCI2zvGQJH5zaoVo9F9zeAEug+7yabVJBkKvAA+ngvTvdLUm/Bgg7oPbz9ZIY1jqjGTn6+kL7igzHXdlaQ==
 
-jsxte@3.3.0:
+jsxte@3.3.0, jsxte@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.3.0.tgz#d8e4639dd926d214421d67c155e14b285c4f50f1"
   integrity sha512-ucIUALv8L5UXb87SRm2r1eR1wH7d/x9UV3lhonDNgwhcdEKhQaVUkAh0ATgGk8iFODUaEnYUnSvRdAKb2LICcA==
-
-jsxte@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/jsxte/-/jsxte-3.1.6.tgz#1f7a74af1345e12e044519a1f916b1ba7071cd1a"
-  integrity sha512-9Kx5nrwBriZZ2Wu5WQA4Lxtap/gklOdvGMDaoSQZ28bU7I4FrnTBVevxklPX9TrDTKgUB0Nn+F1z7pkptcRidQ==
 
 "lru-cache@^9.1.1 || ^10.0.0":
   version "10.0.1"
