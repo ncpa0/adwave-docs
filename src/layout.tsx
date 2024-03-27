@@ -89,8 +89,11 @@ export function Layout(
           type="global"
         />
         <Script package="adwaveui" type="iife" />
-        <Script package="htmx.org" type="iife" />
-        <Script package="htmx.org/dist/ext/preload" type="iife" />
+        <Script
+          dirname={__dirname}
+          path="./htmx.ts"
+          type="iife"
+        />
       </head>
       <body hx-ext="preload" class={cls(Box.box, Theme.dark)}>
         <div

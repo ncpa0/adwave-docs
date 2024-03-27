@@ -21,14 +21,13 @@
   "devDependencies": {
     "@types/node": "^18",
     "async-await-queue": "^2.1.4",
-    "chokidar": "^3.5.3",
-    "dprint": "^0.42.5",
-    "esbuild": "^0.19.5",
-    "htmx.org": "^1.9.7",
-    "jsxte": "3.3.0",
+    "chokidar": "^3.6.0",
+    "dprint": "^0.45.0",
+    "esbuild": "^0.20.2",
+    "htmx.org": "^1.9.11",
+    "jsxte": "3.3.1",
     "node-os-walk": "^1.0.2",
     "prettier": "^3.0.3",
-    "prettier-plugin-jsdoc": "^1.1.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2",
     "workbox": "^0.0.0",
@@ -37,9 +36,8 @@
     "workbox-strategies": "^7.0.0"
   },
   "dependencies": {
-    "@kuscamara/code-sample": "^3.0.2",
-    "adwavecss": "0.0.10",
-    "adwaveui": "^0.0.3",
+    "adwavecss": "0.0.13",
+    "adwaveui": "^0.0.5",
     "highlight.js": "^11.9.0"
   }
 }
