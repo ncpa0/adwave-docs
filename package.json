@@ -22,22 +22,22 @@
     "@types/node": "^18",
     "async-await-queue": "^2.1.4",
     "chokidar": "^3.6.0",
-    "dprint": "^0.45.0",
-    "esbuild": "^0.20.2",
-    "htmx.org": "^1.9.11",
+    "dprint": "^0.46.1",
+    "esbuild": "^0.21.4",
+    "htmx.org": "^1.9.12",
     "jsxte": "3.3.1",
     "node-os-walk": "^1.0.2",
-    "prettier": "^3.0.3",
+    "prettier": "^3.3.1",
     "rimraf": "^5.0.5",
-    "typescript": "^5.2.2",
+    "typescript": "^5.4.5",
     "workbox": "^0.0.0",
-    "workbox-expiration": "^7.0.0",
-    "workbox-routing": "^7.0.0",
-    "workbox-strategies": "^7.0.0"
+    "workbox-expiration": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0"
   },
   "dependencies": {
     "adwavecss": "0.0.13",
-    "adwaveui": "^0.0.5",
+    "adwaveui": "^0.0.6",
     "highlight.js": "^11.9.0"
   }
 }
