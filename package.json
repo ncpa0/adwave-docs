@@ -37,7 +37,8 @@
   },
   "dependencies": {
     "adwavecss": "0.0.13",
-    "adwaveui": "^0.0.6",
+    "adwaveui": "^0.0.7",
     "highlight.js": "^11.9.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
