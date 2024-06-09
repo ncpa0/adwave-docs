@@ -16,9 +16,11 @@
   "scripts": {
     "build": "node ./scripts/build.cjs --clean",
     "build:dev": "BASE_URL=/ node ./scripts/build.cjs --dev",
+    "start:dev": "goserve --aw --spa index.html ./docs",
     "fmt": "dprint fmt"
   },
   "devDependencies": {
+    "@ncpa0cpl/goserve": "^1.0.3",
     "@types/node": "^18",
     "async-await-queue": "^2.1.4",
     "chokidar": "^3.6.0",
@@ -37,7 +39,7 @@
   },
   "dependencies": {
     "adwavecss": "0.0.13",
-    "adwaveui": "^0.0.7",
+    "adwaveui": "^0.0.8",
     "highlight.js": "^11.9.0"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
