@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const { renderToHtmlAsync, defineContext } = require("jsxte");
+const { renderToHtmlAsync, defineContext, JsxteRenderError } = require("jsxte");
 const { jsx } = require("jsxte/jsx-runtime");
 const esbuild = require("esbuild");
 const { evalModule } = require("./eval-module.cjs");
@@ -74,10 +74,18 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     }
   };
 
-  const html = await renderToHtmlAsync(
-    jsx(ExtFilesCtx.Provider, { value: { register: registerExternalFile } }, jsx(Component, {})),
-    { pretty: true },
-  );
+  let html;
+  try {
+    html = await renderToHtmlAsync(
+      jsx(ExtFilesCtx.Provider, { value: { register: registerExternalFile } }, jsx(Component, {})),
+      { pretty: true },
+    );
+  } catch (e) {
+    if (JsxteRenderError.is(e)) {
+      console.error(e.toString());
+    }
+    throw e;
+  }
 
   const htmlRel = path.relative(templatesSrc, tsxFilename);
   const htmlOutFile = changeExt(path.join(outDir, htmlRel), "html");

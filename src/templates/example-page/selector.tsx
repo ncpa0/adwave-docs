@@ -63,6 +63,34 @@ export default function SelectorExample() {
             </adw-selector>
           </CodeSample>
         </ExampleSection>
+        <ExampleSection
+          label="Inert Selector Option"
+          description="Inert selector option will display in the dropdown but cannot be interacted with."
+        >
+          <CodeSample>
+            <adw-selector placeholder="Select animal">
+              <adw-option inert>Mammals</adw-option>
+              <adw-option value="cat">Cat</adw-option>
+              <adw-option value="dog">Dog</adw-option>
+              <adw-option value="platypus">Platypus</adw-option>
+              <adw-option value="bat">Bat</adw-option>
+              <adw-option value="lion">Lion</adw-option>
+              <adw-option inert>Birds</adw-option>
+              <adw-option value="eagle">Eagle</adw-option>
+              <adw-option value="penguin">Penguin</adw-option>
+              <adw-option value="parrot">Parrot</adw-option>
+              <adw-option value="owl">Owl</adw-option>
+              <adw-option value="pigeon">Pigeon</adw-option>
+              <adw-option value="crow">Crow</adw-option>
+              <adw-option value="raven">Raven</adw-option>
+              <adw-option value="hummingbird">Hummingbird</adw-option>
+              <adw-option inert>Arachnids</adw-option>
+              <adw-option value="spider">Spider</adw-option>
+              <adw-option value="scorpion">Scorpion</adw-option>
+              <adw-option value="tick">Tick</adw-option>
+            </adw-selector>
+          </CodeSample>
+        </ExampleSection>
         <ExampleSection label="Disabled Selector">
           <CodeSample>
             <adw-selector disabled>

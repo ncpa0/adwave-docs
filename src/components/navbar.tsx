@@ -54,9 +54,19 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
       />
       <span class={NavSidebar.separator}></span>
       <NavbarLink
+        label="Alert"
+        isActive={props.activePage === "alert"}
+        href="/example-page/alert.html"
+      />
+      <NavbarLink
         label="Box"
         isActive={props.activePage === "box"}
         href="/example-page/box.html"
+      />
+      <NavbarLink
+        label="Breadcrumbs"
+        isActive={props.activePage === "breadcrumbs"}
+        href="/example-page/breadcrumbs.html"
       />
       <NavbarLink
         label="Button"
@@ -102,6 +112,11 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
         label="Separator"
         isActive={props.activePage === "separator"}
         href="/example-page/separator.html"
+      />
+      <NavbarLink
+        label="Skeleton"
+        isActive={props.activePage === "skeleton"}
+        href="/example-page/skeleton.html"
       />
       <NavbarLink
         label="Typography"

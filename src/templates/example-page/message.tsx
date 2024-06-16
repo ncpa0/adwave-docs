@@ -12,7 +12,7 @@ export default function MessageExample() {
           <CodeSample>
             <div style="display: grid; grid-template-rows: 1fr 1fr; grid-gap: 1em;">
               <span class={cls(Message.message, Message.success)}>Message: Success</span>
-              <span class={cls(Message.message, Message.alert)}>Message: Alert</span>
+              <span class={cls(Message.message, Message.warning)}>Message: Warning</span>
               <span class={cls(Message.message, Message.error)}>Message: Error</span>
             </div>
           </CodeSample>
