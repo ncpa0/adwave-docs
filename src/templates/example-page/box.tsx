@@ -31,17 +31,23 @@ export default function BoxExample() {
                 `}
               </style>
               <div class="flexbox box-example">
-                <div class={Box.box}>
+                <div class={cls(Box.box, "bg-1")}>
                   <h3>Box Level 1</h3>
                 </div>
-                <div class={cls(Box.box, "bg-level-2")}>
+                <div class={cls(Box.box, "bg-2")}>
                   <h3>Box Level 2</h3>
                 </div>
-                <div class={cls(Box.box, "bg-level-3")}>
+                <div class={cls(Box.box, "bg-3")}>
                   <h3>Box Level 3</h3>
                 </div>
-                <div class={cls(Box.box, "bg-level-4")}>
+                <div class={cls(Box.box, "bg-4")}>
                   <h3>Box Level 4</h3>
+                </div>
+                <div class={cls(Box.box, "bg-5")}>
+                  <h3>Box Level 5</h3>
+                </div>
+                <div class={cls(Box.box, "bg-6")}>
+                  <h3>Box Level 6</h3>
                 </div>
               </div>
             </CodeSample>

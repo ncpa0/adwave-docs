@@ -16,12 +16,14 @@ export const FontSizeSelector = () => {
         >
           -
         </button>
-        <input
-          class={Input.input}
-          value="20px"
+        <button
+          class={cls(Button.button, "font-size-preview")}
           disabled
           title="Page font size"
-        />
+          inert
+        >
+          20px
+        </button>
         <button
           class={Button.button}
           title="Increase page font size"

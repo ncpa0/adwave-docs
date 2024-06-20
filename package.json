@@ -15,8 +15,8 @@
   },
   "scripts": {
     "build": "node ./scripts/build.cjs --clean",
-    "build:dev": "BASE_URL=/ node ./scripts/build.cjs --dev",
-    "start:dev": "goserve --aw --spa index.html ./docs",
+    "build:dev": "NODE_ENV=development BASE_URL=/ node ./scripts/build.cjs --dev",
+    "start:dev": "goserve --watch --nocache --spa index.html ./docs",
     "fmt": "dprint fmt"
   },
   "devDependencies": {

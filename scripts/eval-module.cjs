@@ -8,6 +8,7 @@ module.exports.evalModule = async function evalModule(filename, code) {
 
   const context = {
     ...global,
+    process: process,
     exports: ctxExports,
     module: {
       exports: ctxExports,

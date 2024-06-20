@@ -13,6 +13,8 @@ declare global {
   }
 }
 
+const __DEV__ = process.env.NODE_ENV === "development";
+
 export function Layout(
   props: JSXTE.PropsWithChildren<{
     title?: string;
@@ -36,7 +38,10 @@ export function Layout(
           dirname={__dirname}
           path="./index.css"
         />
-        <Style package="adwavecss/dist/styles.css" />
+        <Style
+          dirname={__dirname}
+          path="../../ADWaveCSS/dist/styles.css"
+        />
         <Style
           dirname={__dirname}
           path="./components/code-sample.css"
@@ -110,6 +115,18 @@ export function Layout(
             {props.children}
           </div>
         </div>
+        {__DEV__ && (
+          <script>
+            {/* js */ `
+            let timeout;
+            HMR.onChange(() => {
+              clearTimeout(timeout);
+              timeout = setTimeout(() => {
+                window.location.reload();
+              }, 2500);
+            })`}
+          </script>
+        )}
       </body>
     </html>
   );

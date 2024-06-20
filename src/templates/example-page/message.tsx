@@ -11,6 +11,7 @@ export default function MessageExample() {
         <ExampleSection label="Message">
           <CodeSample>
             <div style="display: grid; grid-template-rows: 1fr 1fr; grid-gap: 1em;">
+              <span class={cls(Message.message, "info")}>Message: Info</span>
               <span class={cls(Message.message, Message.success)}>Message: Success</span>
               <span class={cls(Message.message, Message.warning)}>Message: Warning</span>
               <span class={cls(Message.message, Message.error)}>Message: Error</span>

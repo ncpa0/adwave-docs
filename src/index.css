@@ -64,6 +64,10 @@ body {
   }
 }
 
+.light-theme code.hljs {
+  background-color: hsl(0deg 0% 95.73%);
+}
+
 code.hljs::-webkit-scrollbar {
   background-color: #0000;
   width: 8px;

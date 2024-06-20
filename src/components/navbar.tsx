@@ -148,7 +148,7 @@ const LeftNavbarMobile = (props: { activePage?: string }) => {
       </button>
       <dialog>
         <div class="dialog-container flexbox">
-          <div class="left-navbar-mobile-overlay box bg-level-2 column">
+          <div class="left-navbar-mobile-overlay box bg-2 column">
             <ThemeSwitcher />
             <FontSizeSelector />
             <span class="separator"></span>
@@ -165,7 +165,7 @@ const LeftNavbarMobile = (props: { activePage?: string }) => {
 
 export const Navbar = (props: { activePage?: string }) => {
   return (
-    <div class={cls(Box.box, "bg-level-2")}>
+    <div class={cls(Box.box, "bg-3")}>
       <LeftNavbarDesktop activePage={props.activePage} />
       <LeftNavbarMobile activePage={props.activePage} />
       <Script
