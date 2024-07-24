@@ -32,7 +32,7 @@ export default function DialogExample() {
           <CodeSample>
             <button
               class={Button.button}
-              onclick={`(${function () {
+              onclick={`(${function() {
                 const dialog = document.getElementById(
                   "dialog-example-1",
                 ) as HTMLDialogElement;
@@ -59,7 +59,7 @@ export default function DialogExample() {
           <CodeSample>
             <button
               class={Button.button}
-              onclick={`(${function () {
+              onclick={`(${function() {
                 const dialog = document.getElementById(
                   "dialog-example-2",
                 ) as HTMLDialogElement;
@@ -77,7 +77,7 @@ export default function DialogExample() {
               <div class={Dialog.header}>
                 <button
                   class={cls(Button.button, Button.flat)}
-                  onclick={`(${function () {
+                  onclick={`(${function() {
                     const dialog = document.getElementById(
                       "dialog-example-2",
                     ) as HTMLDialogElement;
@@ -89,7 +89,7 @@ export default function DialogExample() {
                 <span class="dialog-title">Dialog Title</span>
                 <button
                   class={cls(Button.button, Button.primary)}
-                  onclick={`(${function () {
+                  onclick={`(${function() {
                     const dialog = document.getElementById(
                       "dialog-example-2",
                     ) as HTMLDialogElement;

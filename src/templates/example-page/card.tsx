@@ -15,10 +15,17 @@ export default function CardExample() {
             </div>
           </CodeSample>
         </ExampleSection>
-        <ExampleSection label="Activable Card" description="Hover the mouse over the card to see it change color.">
+        <ExampleSection
+          label="Activable Card"
+          description="Hover the mouse over the card to see it change color."
+        >
           <CodeSample>
             <div class="box" style="padding: 2em">
-              <div class={cls(Card.card, Card.activable)} style="width: 100px; height:100px"></div>
+              <div
+                class={cls(Card.card, Card.activable)}
+                style="width: 100px; height:100px"
+              >
+              </div>
             </div>
           </CodeSample>
         </ExampleSection>

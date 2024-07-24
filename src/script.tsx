@@ -82,7 +82,10 @@ export type ScriptProps =
     }
   );
 
-export const Script = async (props: ScriptProps, componentApi: ComponentApi) => {
+export const Script = async (
+  props: ScriptProps,
+  componentApi: ComponentApi,
+) => {
   const { type = "module", onLoad = () => {}, buildOptions = {} } = props;
 
   const options: esbuild.BuildOptions = {
@@ -130,7 +133,11 @@ export const Script = async (props: ScriptProps, componentApi: ComponentApi) => 
   contents = `/* ${options.entryPoints[0]} */\n${contents}`;
 
   const extFiles = componentApi.ctx.getOrFail(EFC.ExtFilesCtx);
-  const src = extFiles.register(contents, props.package ?? path.basename(props.path), "js");
+  const src = extFiles.register(
+    contents,
+    props.package ?? path.basename(props.path),
+    "js",
+  );
 
   return (
     <script

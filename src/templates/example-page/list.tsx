@@ -31,20 +31,20 @@ export default function ListExample() {
           description="Hover the mouse over the elements to see it change color."
         >
           <CodeSample>
-              <div class={cls(List.list)} style="flex: 1;">
-                <div class={cls(List.element, List.activableElement)}>
-                  <span class={Typography.text}>Element 1</span>
-                </div>
-                <div class={cls(List.element, List.activableElement)}>
-                  <span class={Typography.text}>Element 2</span>
-                </div>
-                <div class={cls(List.element, List.activableElement)}>
-                  <span class={Typography.text}>Element 3</span>
-                </div>
-                <div class={cls(List.element, List.activableElement)}>
-                  <span class={Typography.text}>Element 4</span>
-                </div>
+            <div class={cls(List.list)} style="flex: 1;">
+              <div class={cls(List.element, List.activableElement)}>
+                <span class={Typography.text}>Element 1</span>
               </div>
+              <div class={cls(List.element, List.activableElement)}>
+                <span class={Typography.text}>Element 2</span>
+              </div>
+              <div class={cls(List.element, List.activableElement)}>
+                <span class={Typography.text}>Element 3</span>
+              </div>
+              <div class={cls(List.element, List.activableElement)}>
+                <span class={Typography.text}>Element 4</span>
+              </div>
+            </div>
           </CodeSample>
         </ExampleSection>
         <ExampleSection

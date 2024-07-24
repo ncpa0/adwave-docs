@@ -11,7 +11,9 @@ export default function NavSidebarExample() {
         <ExampleSection label="Nav Sidebar">
           <CodeSample>
             <div class={NavSidebar.navSidebar}>
-              <button class={cls(NavSidebar.button, NavSidebar.active)}>Wi-Fi</button>
+              <button class={cls(NavSidebar.button, NavSidebar.active)}>
+                Wi-Fi
+              </button>
               <button class={NavSidebar.button}>Network</button>
               <button class={NavSidebar.button}>Bluetooth</button>
               <span class={NavSidebar.separator}></span>

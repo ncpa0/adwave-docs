@@ -1,7 +1,7 @@
 import { Button, Typography } from "adwavecss";
 import { cls } from "../utils/cls";
-import { url } from "../utils/url";
 import { escapeHtml } from "../utils/escape-html";
+import { url } from "../utils/url";
 
 export function Example(
   props: JSXTE.PropsWithChildren<{
@@ -38,13 +38,11 @@ export function ExampleSection(
               Button.flat,
               Button.square,
             )}
-            onclick={
-              /* js */ `
+            onclick={/* js */ `
               const href = new window.URL(window.location.href);
               href.hash = this.dataset.anchor;
               navigator.clipboard.writeText(href.toString());
-            `
-            }
+            `}
           >
             <img id="link-dark" src={url("assets/link-dark.svg")} />
             <img id="link-light" src={url("assets/link-light.svg")} />

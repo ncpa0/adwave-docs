@@ -3,12 +3,15 @@ class FontSizeSelector extends HTMLDivElement {
   previewElement!: HTMLButtonElement;
 
   connectedCallback() {
-    const browserDefault = this.currentFontSize = this.getBrowserDefaultFontSize();
+    const browserDefault = this.currentFontSize = this
+      .getBrowserDefaultFontSize();
     this.loadFromLocalStorage();
 
     const btnDecrease = this.querySelector("#btn-decrease")!;
     const btnIncrease = this.querySelector("#btn-increase")!;
-    this.previewElement = this.querySelector(".font-size-preview") as HTMLButtonElement;
+    this.previewElement = this.querySelector(
+      ".font-size-preview",
+    ) as HTMLButtonElement;
 
     btnDecrease.addEventListener("click", this.handleDecrease);
     btnIncrease.addEventListener("click", this.handleIncrease);
@@ -58,4 +61,6 @@ class FontSizeSelector extends HTMLDivElement {
   };
 }
 
-window.customElements.define("font-size-selector", FontSizeSelector, { extends: "div" });
+window.customElements.define("font-size-selector", FontSizeSelector, {
+  extends: "div",
+});

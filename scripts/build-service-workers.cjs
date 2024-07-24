@@ -43,8 +43,8 @@ async function buildServiceWorkers(outDir) {
       sourcemap: IS_DEV ? "inline" : false,
       platform: "browser",
       define: {
-      	__DEV__: String(IS_DEV),
-      }
+        __DEV__: String(IS_DEV),
+      },
     });
   }));
 }

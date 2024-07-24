@@ -39,14 +39,20 @@ export const Style = async (
 
   if (result.errors.length > 0) throw new Error(result.errors[0]!.text);
 
-  const contents = `/* ${options.entryPoints[0]} */\n${result.outputFiles![0]!.text.trim()}`;
+  const contents = `/* ${options.entryPoints[0]} */\n${
+    result.outputFiles![0]!.text.trim()
+  }`;
 
   if (props.inline) {
     return <style>{contents}</style>;
   }
 
   const extFiles = componentApi.ctx.getOrFail(EFC.ExtFilesCtx);
-  const src = extFiles.register(contents, props.package ?? path.basename(props.path), "css");
+  const src = extFiles.register(
+    contents,
+    props.package ?? path.basename(props.path),
+    "css",
+  );
 
   return (
     <link

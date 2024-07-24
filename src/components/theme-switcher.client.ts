@@ -12,7 +12,9 @@ class PersistentStorage {
   private static THEME_KEY = "theme";
 
   public static getTheme() {
-    const localStorageTheme = localStorage.getItem(this.THEME_KEY) as Theme | null;
+    const localStorageTheme = localStorage.getItem(this.THEME_KEY) as
+      | Theme
+      | null;
     if (localStorageTheme) {
       return localStorageTheme;
     }
@@ -24,7 +26,9 @@ class PersistentStorage {
 }
 
 function getCurrentTheme(): Theme {
-  const theme = Array.from(document.body.classList.values()).find(c => c.endsWith("theme"));
+  const theme = Array.from(document.body.classList.values()).find(c =>
+    c.endsWith("theme")
+  );
   if (theme) {
     return theme as Theme;
   }

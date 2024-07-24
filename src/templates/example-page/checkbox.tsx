@@ -16,8 +16,17 @@ export default function CheckboxExample() {
         <ExampleSection label="Disabled Checkbox">
           <CodeSample>
             <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center;">
-              <input type="checkbox" class={cls(Checkbox.checkbox, Checkbox.disabled)} disabled />
-              <input type="checkbox" class={cls(Checkbox.checkbox, Checkbox.disabled)} disabled checked />
+              <input
+                type="checkbox"
+                class={cls(Checkbox.checkbox, Checkbox.disabled)}
+                disabled
+              />
+              <input
+                type="checkbox"
+                class={cls(Checkbox.checkbox, Checkbox.disabled)}
+                disabled
+                checked
+              />
             </div>
           </CodeSample>
         </ExampleSection>

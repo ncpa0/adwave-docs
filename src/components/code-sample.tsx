@@ -12,7 +12,10 @@ declare global {
   }
 }
 
-export async function CodeSample(props: JSXTE.PropsWithChildren<{}>, componentApi: ComponentApi) {
+export async function CodeSample(
+  props: JSXTE.PropsWithChildren<{}>,
+  componentApi: ComponentApi,
+) {
   const asString = componentApi.render(<>{props.children}</>, { pretty: true });
   const formatted = (await prettier.format(asString, {
     parser: "html",

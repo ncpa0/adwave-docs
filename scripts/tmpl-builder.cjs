@@ -9,7 +9,8 @@ const { ExtFilesCtx } = require("./external-files-context.cjs");
 const crypto = require("crypto");
 
 function createHash(data, len) {
-  return crypto.createHash("shake256", { outputLength: len }).update(data).digest("hex");
+  return crypto.createHash("shake256", { outputLength: len }).update(data)
+    .digest("hex");
 }
 
 const IS_DEV = process.argv.includes("--dev");
@@ -53,7 +54,9 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
   const Component = modExports.default;
 
   if (typeof Component !== "function") {
-    throw new Error(`Template ${tsxFilename} does not export a default function.`);
+    throw new Error(
+      `Template ${tsxFilename} does not export a default function.`,
+    );
   }
 
   /** @type {{ contents: string; outFile: string }[]} */
@@ -63,12 +66,18 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     switch (type) {
       case "css": {
         const fPath = `/assets/css/${hashedName}.css`;
-        registeredExtFiles.push({ contents, outFile: path.join(outDir, fPath) });
+        registeredExtFiles.push({
+          contents,
+          outFile: path.join(outDir, fPath),
+        });
         return fPath;
       }
       case "js": {
         const fPath = `/assets/js/${hashedName}.js`;
-        registeredExtFiles.push({ contents, outFile: path.join(outDir, fPath) });
+        registeredExtFiles.push({
+          contents,
+          outFile: path.join(outDir, fPath),
+        });
         return fPath;
       }
     }
@@ -77,7 +86,11 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
   let html;
   try {
     html = await renderToHtmlAsync(
-      jsx(ExtFilesCtx.Provider, { value: { register: registerExternalFile } }, jsx(Component, {})),
+      jsx(
+        ExtFilesCtx.Provider,
+        { value: { register: registerExternalFile } },
+        jsx(Component, {}),
+      ),
       { pretty: true },
     );
   } catch (e) {
