@@ -5,7 +5,11 @@ import { url } from "../utils/url";
 import { FontSizeSelector } from "./font-size-selector";
 import { ThemeSwitcher } from "./theme-switcher";
 
-const NavbarLink = (props: { href: string; label: string; isActive?: boolean }) => {
+const NavbarLink = (props: {
+  href: string;
+  label: string;
+  isActive?: boolean;
+}) => {
   return (
     <a
       is="navbar-button"
@@ -84,6 +88,11 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
         href="/example-page/checkbox.html"
       />
       <NavbarLink
+        label="Dialog"
+        isActive={props.activePage === "dialog"}
+        href="/example-page/dialog.html"
+      />
+      <NavbarLink
         label="Frame"
         isActive={props.activePage === "frame"}
         href="/example-page/frame.html"
@@ -109,6 +118,11 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
         href="/example-page/nav-sidebar.html"
       />
       <NavbarLink
+        label="Scrollview"
+        isActive={props.activePage === "scrollview"}
+        href="/example-page/scrollview.html"
+      />
+      <NavbarLink
         label="Separator"
         isActive={props.activePage === "separator"}
         href="/example-page/separator.html"
@@ -117,6 +131,11 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
         label="Skeleton"
         isActive={props.activePage === "skeleton"}
         href="/example-page/skeleton.html"
+      />
+      <NavbarLink
+        label="Spinner"
+        isActive={props.activePage === "spinner"}
+        href="/example-page/spinner.html"
       />
       <NavbarLink
         label="Typography"
@@ -143,12 +162,10 @@ const LeftNavbarDesktop = (props: { activePage?: string }) => {
 const LeftNavbarMobile = (props: { activePage?: string }) => {
   return (
     <div class="left-navbar-mobile column">
-      <button class="btn square navbar-mobile-btn">
-        M
-      </button>
+      <button class="btn square navbar-mobile-btn">M</button>
       <dialog>
         <div class="dialog-container flexbox">
-          <div class="left-navbar-mobile-overlay box bg-level-2 column">
+          <div class="left-navbar-mobile-overlay box bg-2 column">
             <ThemeSwitcher />
             <FontSizeSelector />
             <span class="separator"></span>
@@ -165,13 +182,10 @@ const LeftNavbarMobile = (props: { activePage?: string }) => {
 
 export const Navbar = (props: { activePage?: string }) => {
   return (
-    <div class={cls(Box.box, "bg-level-2")}>
+    <div class={cls(Box.box, "bg-3")}>
       <LeftNavbarDesktop activePage={props.activePage} />
       <LeftNavbarMobile activePage={props.activePage} />
-      <Script
-        dirname={__dirname}
-        path="./navbar.client.tsx"
-      />
+      <Script dirname={__dirname} path="./navbar.client.tsx" />
     </div>
   );
 };

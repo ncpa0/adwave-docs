@@ -1,6 +1,6 @@
 class FontSizeSelector extends HTMLDivElement {
   currentFontSize = 16;
-  previewElement!: HTMLInputElement;
+  previewElement!: HTMLButtonElement;
 
   connectedCallback() {
     const browserDefault = this.currentFontSize = this.getBrowserDefaultFontSize();
@@ -8,7 +8,7 @@ class FontSizeSelector extends HTMLDivElement {
 
     const btnDecrease = this.querySelector("#btn-decrease")!;
     const btnIncrease = this.querySelector("#btn-increase")!;
-    this.previewElement = this.querySelector("input") as HTMLInputElement;
+    this.previewElement = this.querySelector(".font-size-preview") as HTMLButtonElement;
 
     btnDecrease.addEventListener("click", this.handleDecrease);
     btnIncrease.addEventListener("click", this.handleIncrease);
@@ -46,7 +46,7 @@ class FontSizeSelector extends HTMLDivElement {
   }
 
   setSizePreview(fontSize: number) {
-    this.previewElement.value = `${this.currentFontSize}px`;
+    this.previewElement.innerText = `${fontSize}px`;
   }
 
   handleDecrease = () => {

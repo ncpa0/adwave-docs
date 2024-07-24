@@ -15,8 +15,8 @@
   },
   "scripts": {
     "build": "node ./scripts/build.cjs --clean",
-    "build:dev": "BASE_URL=/ node ./scripts/build.cjs --dev",
-    "start:dev": "goserve --aw --spa index.html ./docs",
+    "build:dev": "NODE_ENV=development BASE_URL=/ node ./scripts/build.cjs --dev",
+    "start:dev": "NODE_ENV=development BASE_URL=/ node ./scripts/build.cjs --dev --serve --watch",
     "fmt": "dprint fmt"
   },
   "devDependencies": {
@@ -38,9 +38,9 @@
     "workbox-strategies": "^7.1.0"
   },
   "dependencies": {
-    "adwavecss": "0.0.14",
-    "adwaveui": "^0.0.10",
-    "highlight.js": "^11.9.0"
+    "adwavecss": "0.1.0",
+    "adwaveui": "0.0.11",
+    "highlight.js": "^11.10.0"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
