@@ -4,6 +4,8 @@ import { cls } from "../utils/cls";
 import { url } from "../utils/url";
 import { FontSizeSelector } from "./font-size-selector";
 import { ThemeSwitcher } from "./theme-switcher";
+import HamburgerDark from "../assets/burger-dark.svg";
+import HamburgerLight from "../assets/burger-light.svg";
 
 const NavbarLink = (props: {
   href: string;
@@ -162,8 +164,11 @@ const LeftNavbarDesktop = (props: { activePage?: string }) => {
 const LeftNavbarMobile = (props: { activePage?: string }) => {
   return (
     <div class="left-navbar-mobile column">
-      <button class="btn square navbar-mobile-btn">M</button>
-      <dialog>
+      <button class="btn square flat navbar-mobile-btn">
+        <HamburgerDark class="light-theme-img" />
+        <HamburgerLight class="dark-theme-img" />
+      </button>
+      <dialog class="navbar-dialog">
         <div class="dialog-container flexbox">
           <div class="left-navbar-mobile-overlay box bg-2 column">
             <ThemeSwitcher />

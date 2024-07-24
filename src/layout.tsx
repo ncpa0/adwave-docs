@@ -79,7 +79,7 @@ export function Layout(
           </div>
         </div>
         {__DEV__ && (
-          <script>
+          <script defer>
             {
               /* js */ `
             let timeout;

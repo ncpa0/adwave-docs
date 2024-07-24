@@ -66,11 +66,12 @@ a.navbar-link button {
   padding: unset;
   min-width: 100vw;
   min-height: 100vh;
-  background-color: #2121214f;
+  background-color: transparent;
 }
 
 .navbar-overlay-backdrop {
   flex: 1;
+  background-color: #00000073;
 }
 
 .left-navbar-mobile-overlay {
@@ -80,4 +81,96 @@ a.navbar-link button {
 
 .navbar-mobile-btn {
   margin: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-mobile-btn .light-theme-img,
+.navbar-mobile-btn .dark-theme-img {
+  --btn-image-dim: 2em;
+  display: none;
+  width: var(--btn-image-dim);
+  height: var(--btn-image-dim);
+}
+
+.dark-theme .navbar-mobile-btn .dark-theme-img {
+  display: block;
+}
+
+.light-theme .navbar-mobile-btn .light-theme-img {
+  display: block;
+}
+
+.navbar-dialog {
+  position: relative;
+
+  &::backdrop {
+    background-color: transparent;
+  }
+
+  & .dialog-container {
+    flex: 1;
+  }
+
+  & .left-navbar-mobile-overlay {
+    position: fixed;
+    left: -65%;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+    max-height: 100vh;
+    overflow-y: auto;
+    z-index: 2;
+
+    & > *:last-child {
+      /*
+      * On mobile the button bar can cover the bottom of the scrollable element
+      * add a padding to it so even when that happens the content appears within the view
+      */
+      padding-bottom: 65px;
+    }
+  }
+
+  & .navbar-overlay-backdrop {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+  }
+
+  &[open] {
+    display: flex;
+    & .left-navbar-mobile-overlay {
+      animation-name: slideIn;
+    }
+    & .navbar-overlay-backdrop {
+      animation-name: fadein;
+    }
+  }
+
+  & .theme-switcher {
+    padding-inline: 0.35em;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    left: -75%;
+  }
+  to {
+    left: 0%;
+  }
 }

@@ -7,9 +7,12 @@ const { evalModule } = require("./eval-module.cjs");
 const { changeExt } = require("./change-ext.cjs");
 const { ExtFilesCtx } = require("./external-files-context.cjs");
 const crypto = require("crypto");
+const { default: dedent } = require("dedent");
 
 function createHash(data, len) {
-  return crypto.createHash("shake256", { outputLength: len }).update(data)
+  return crypto
+    .createHash("shake256", { outputLength: len })
+    .update(data)
     .digest("hex");
 }
 
@@ -24,10 +27,15 @@ const templatesSrc = p("src/templates");
 /** @typedef {{ root: string; tsx: string }} Template */
 
 /**
+ * @param {string} srcDir
  * @param {Template} template
  * @param {string} outDir
  */
-module.exports.buildTemplate = async function buildTemplate(template, outDir) {
+module.exports.buildTemplate = async function buildTemplate(
+  srcDir,
+  template,
+  outDir,
+) {
   const tsxFilename = path.join(template.root, template.tsx);
 
   const result = await esbuild.build({
@@ -43,7 +51,7 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
     sourcemap: IS_DEV ? "inline" : false,
     external: ["jsxte", "esbuild", "scripts", "prettier"],
     platform: "node",
-    plugins: [plugin],
+    plugins: [plugin(srcDir, outDir)],
     alias: {
       scripts: p("./scripts"),
     },
@@ -116,7 +124,11 @@ module.exports.buildTemplate = async function buildTemplate(template, outDir) {
   );
 };
 
-const plugin = {
+/**
+ * @param {string} srcDir
+ * @param {string} outDir
+ */
+const plugin = (srcDir, outDir) => ({
   name: "tmpl-builder-plugin",
   /** @param {import("esbuild").PluginBuild} build */
   setup(build) {
@@ -145,5 +157,31 @@ const plugin = {
 
       return { contents: code, loader: "tsx" };
     });
+
+    const BASE_URL = process.env.BASE_URL ?? "/docs/";
+    build.onLoad({ filter: /\.svg$/ }, async (args) => {
+      const relPath = path.relative(srcDir, args.path);
+      await fs.promises.copyFile(args.path, path.join(outDir, relPath));
+      const svgPath = path.join(BASE_URL, relPath);
+
+      const componentName = path
+        .basename(args.path, ".svg")
+        .replace(/^\w/, (char) => char.toUpperCase()) // capitalize first letter
+        .replace(/-\w/, (char) => char[1].toUpperCase()); // to camel case
+
+      const code = /* js */ `
+        import { jsx } from "jsxte/jsx-runtime";
+
+        export default function Svg(props) {
+          return jsx("img", {
+            ...props,
+            src: ${JSON.stringify(svgPath)},
+          });
+        }
+
+        Svg.displayName = ${JSON.stringify(componentName)};
+        `;
+      return { contents: dedent(code.trimStart()), loader: "jsx" };
+    });
   },
-};
+});

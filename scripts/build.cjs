@@ -50,7 +50,7 @@ async function build() {
 
   await Promise.all([
     ...templates.map((tmpl) => {
-      return buildTemplate(tmpl, outDir);
+      return buildTemplate(p("src"), tmpl, outDir);
     }),
     buildServiceWorkers(outDir),
     fs.promises.cp(p("src/assets"), assetsDir, { recursive: true }),
@@ -61,7 +61,9 @@ async function startServer() {
   const { serve } = await import("@ncpa0cpl/goserve");
 
   const proc = serve(p("docs"), {
-    watch: true,
+    hmr: {
+      watch: true,
+    },
     spa: "index.html",
     cacheHeaders: {
       nocache: true,
@@ -104,9 +106,9 @@ build()
           if (ev === "addDir") return;
 
           if (
-            fPath.includes("src/assets")
-            && !fPath.includes("src/assets/js")
-            && !fPath.includes("src/assets/css")
+            fPath.includes("src/assets") &&
+            !fPath.includes("src/assets/js") &&
+            !fPath.includes("src/assets/css")
           ) {
             console.log(
               `Asset changed, copying (${path.relative(p("."), fPath)})`,

@@ -8,6 +8,8 @@ let MobileNavbarModal: HTMLDialogElement | null = null;
 
 const initMobileMenu = () => {
   const dialog = document.querySelector("dialog")!;
+  const btnContainer = dialog.querySelector(".left-navbar-mobile-overlay")!;
+
   const btn = document.querySelector(".navbar-mobile-btn")!;
   btn.addEventListener("click", () => {
     dialog.showModal();
@@ -15,7 +17,33 @@ const initMobileMenu = () => {
 
   const backdropArea = document.querySelector(".navbar-overlay-backdrop")!;
   backdropArea.addEventListener("click", () => {
-    dialog.close();
+    backdropArea.animate(
+      [
+        {
+          opacity: 1,
+        },
+        {
+          opacity: 0,
+        },
+      ],
+      {
+        duration: 300,
+      },
+    );
+    const animation = btnContainer.animate(
+      [
+        {
+          left: "0%",
+        },
+        {
+          left: "-66%",
+        },
+      ],
+      {
+        duration: 250,
+      },
+    );
+    animation.onfinish = () => dialog.close();
   });
 
   MobileNavbarModal = dialog;
