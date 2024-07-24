@@ -30,8 +30,11 @@ export function Layout(
           {props.title ? `ADWave Docs - ${props.title}` : "ADWave Docs"}
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Style
+          dirname={__dirname}
+          path="../node_modules/adwavecss/dist/styles.css"
+        />
         <Style dirname={__dirname} path="./index.css" />
-        <Style dirname={__dirname} path="../../adwavecss/dist/styles.css" />
         <Style dirname={__dirname} path="./components/code-sample.css" />
         <Style dirname={__dirname} path="./components/example.css" />
         <Style dirname={__dirname} path="./components/font-size-selector.css" />
@@ -77,14 +80,16 @@ export function Layout(
         </div>
         {__DEV__ && (
           <script>
-            {/* js */ `
+            {
+              /* js */ `
             let timeout;
             HMR.onChange(() => {
               clearTimeout(timeout);
               timeout = setTimeout(() => {
                 window.location.reload();
               }, 2500);
-            })`}
+            })`
+            }
           </script>
         )}
       </body>
