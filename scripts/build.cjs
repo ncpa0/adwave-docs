@@ -57,7 +57,27 @@ async function build() {
   ]);
 }
 
+async function startServer() {
+  const { serve } = await import("@ncpa0cpl/goserve");
+
+  const proc = serve(p("docs"), {
+    watch: true,
+    spa: "index.html",
+    cacheHeaders: {
+      nocache: true,
+    },
+    port: "8080",
+  });
+
+  console.log("Server started at http://localhost:8080");
+
+  process.on("exit", () => {
+    proc.kill();
+  });
+}
+
 const watch = process.argv.includes("--watch");
+const shouldServe = process.argv.includes("--serve");
 
 build()
   .catch((e) => {
@@ -65,32 +85,46 @@ build()
     if (!watch) process.exit(1);
   })
   .finally(() => {
+    if (shouldServe) {
+      startServer();
+    }
+
     if (watch) {
       const buildQueue = new Queue(1);
 
       const chokidar = require("chokidar");
 
       chokidar
-        .watch(p("src"), { alwaysStat: false, ignoreInitial: true, useFsEvents: true })
+        .watch(p("src"), {
+          alwaysStat: false,
+          ignoreInitial: true,
+          useFsEvents: true,
+        })
         .on("all", (ev, fPath, stats) => {
           if (ev === "addDir") return;
 
           if (
-            fPath.includes("src/assets")
-            && !fPath.includes("src/assets/js")
-            && !fPath.includes("src/assets/css")
+            fPath.includes("src/assets") &&
+            !fPath.includes("src/assets/js") &&
+            !fPath.includes("src/assets/css")
           ) {
-            console.log(`Asset changed, copying (${path.relative(p("."), fPath)})`);
+            console.log(
+              `Asset changed, copying (${path.relative(p("."), fPath)})`,
+            );
             const rel = path.relative(p("src/assets"), fPath);
-            fs.promises.cp(fPath, path.join(p("docs/assets"), rel), {
-              recursive: true,
-            }).catch((e) => {
-              console.error(e);
-            });
+            fs.promises
+              .cp(fPath, path.join(p("docs/assets"), rel), {
+                recursive: true,
+              })
+              .catch((e) => {
+                console.error(e);
+              });
             return;
           }
 
-          console.log(`File changed, recompiling (${path.relative(p("."), fPath)})`);
+          console.log(
+            `File changed, recompiling (${path.relative(p("."), fPath)})`,
+          );
 
           buildQueue.run(async () => {
             await build().catch((e) => {
