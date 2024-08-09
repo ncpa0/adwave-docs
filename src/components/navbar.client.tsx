@@ -4,20 +4,40 @@ declare global {
   const htmx: typeof HTMX;
 }
 
-let MobileNavbarModal: HTMLDialogElement | null = null;
+class MobileMenu {
+  dialog;
+  btnContainer;
+  btn;
+  backdropArea;
+  closingAnimation: Animation | null = null;
 
-const initMobileMenu = () => {
-  const dialog = document.querySelector("dialog")!;
-  const btnContainer = dialog.querySelector(".left-navbar-mobile-overlay")!;
+  constructor() {
+    this.dialog = document.querySelector("dialog")!;
+    this.btnContainer = this.dialog.querySelector(
+      ".left-navbar-mobile-overlay",
+    )!;
+    this.btn = document.querySelector(".navbar-mobile-btn")!;
+    this.backdropArea = document.querySelector(".navbar-overlay-backdrop")!;
 
-  const btn = document.querySelector(".navbar-mobile-btn")!;
-  btn.addEventListener("click", () => {
-    dialog.showModal();
-  });
+    this.btn.addEventListener("click", () => {
+      this.dialog.showModal();
+    });
 
-  const backdropArea = document.querySelector(".navbar-overlay-backdrop")!;
-  backdropArea.addEventListener("click", () => {
-    backdropArea.animate(
+    this.backdropArea.addEventListener("click", () => {
+      this.close();
+    });
+
+    htmx.on("htmx:pushedIntoHistory", () => {
+      this.close();
+    });
+  }
+
+  close() {
+    if (this.closingAnimation || !this.dialog.open) {
+      return;
+    }
+
+    this.backdropArea.animate(
       [
         {
           opacity: 1,
@@ -30,7 +50,7 @@ const initMobileMenu = () => {
         duration: 300,
       },
     );
-    const animation = btnContainer.animate(
+    this.closingAnimation = this.btnContainer.animate(
       [
         {
           left: "0%",
@@ -43,10 +63,17 @@ const initMobileMenu = () => {
         duration: 250,
       },
     );
-    animation.onfinish = () => dialog.close();
-  });
 
-  MobileNavbarModal = dialog;
+    this.closingAnimation.onfinish = () => {
+      this.closingAnimation = null;
+      this.dialog.close();
+    };
+  }
+}
+
+let mobileMenu: MobileMenu | null = null;
+const initMobileMenu = () => {
+  mobileMenu = new MobileMenu();
 };
 
 class NavbarButton extends HTMLAnchorElement {
@@ -60,12 +87,13 @@ class NavbarButton extends HTMLAnchorElement {
     } else {
       innerBtn.classList.remove("active");
     }
-
-    MobileNavbarModal?.close();
   };
 
   connectedCallback() {
     htmx.on("htmx:pushedIntoHistory", this.onHistoryPush);
+    this.addEventListener("mousedown", () => {
+      mobileMenu?.close();
+    });
   }
 
   disconnectedCallback() {

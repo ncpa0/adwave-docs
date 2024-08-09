@@ -1,0 +1,41 @@
+.github-badge {
+  position: fixed;
+  width: 16em;
+  height: 8em;
+  bottom: -4em;
+  right: -8em;
+  transform: rotate(-45deg);
+  display: flex;
+  justify-content: center;
+
+  & .ghb-dark,
+  & .ghb-light {
+    margin-top: 0.4em;
+    margin-right: 0.2em;
+    display: none;
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+
+.dark-theme .github-badge {
+  background: #f5f5f5;
+
+  & .ghb-dark {
+    display: block;
+  }
+}
+
+.light-theme .github-badge {
+  background: #141414;
+
+  & .ghb-light {
+    display: block;
+  }
+}
+
+@media (max-width: 830px) {
+  .github-badge {
+    display: none;
+  }
+}

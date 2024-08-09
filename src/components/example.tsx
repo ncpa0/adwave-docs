@@ -45,12 +45,12 @@ export function ExampleSection(
             `}
           >
             <img
-              id="link-dark"
+              class="link-dark"
               src={url("assets/link-dark.svg")}
               alt={`Copy link to "${label}"`}
             />
             <img
-              id="link-light"
+              class="link-light"
               src={url("assets/link-light.svg")}
               alt={`Copy link to "${label}"`}
             />

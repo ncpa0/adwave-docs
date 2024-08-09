@@ -3,6 +3,7 @@
 @import "components/font-size-selector.css";
 @import "components/navbar.css";
 @import "components/theme-switcher.css";
+@import "components/gh-badge.css";
 @import "../node_modules/adwavecss/dist/styles.css";
 
 *:not(body, h1, h2, h3, h4, h5, h6) {
@@ -52,6 +53,7 @@ body {
 
 .navbar-container {
   view-transition-name: none;
+  z-index: 100;
 }
 
 @keyframes fade-in {

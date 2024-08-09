@@ -1,4 +1,5 @@
 import { Box, Theme } from "adwavecss";
+import { GithubBadge } from "./components/gh-badge";
 import { Navbar } from "./components/navbar";
 import { Script } from "./script";
 import { Style } from "./style";
@@ -65,6 +66,7 @@ export function Layout(
           <div id="example-view" class="flexbox">
             {props.children}
           </div>
+          <GithubBadge />
         </div>
         {__DEV__ && (
           <script defer>

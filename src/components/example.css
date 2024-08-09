@@ -56,15 +56,15 @@
   padding: 4px;
 }
 
-#link-light,
-#link-dark {
+.link-light,
+.link-dark {
   display: none;
 }
 
-.light-theme .header-anchor #link-light {
+.light-theme .header-anchor .link-light {
   display: block;
 }
 
-.dark-theme .header-anchor #link-dark {
+.dark-theme .header-anchor .link-dark {
   display: block;
 }
