@@ -50,10 +50,42 @@ body {
   align-items: center;
 }
 
+.navbar-container {
+  view-transition-name: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+/* define animations for the old and new content */
+::view-transition-old(main-transition) {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-name: fade-out;
+}
+::view-transition-new(main-transition) {
+  animation-delay: 200ms;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in;
+  animation-name: fade-in;
+}
+
 #example-view {
   justify-content: center;
   margin-bottom: 2em;
   flex: 1;
+  view-transition-name: main-transition;
 }
 
 .contents {

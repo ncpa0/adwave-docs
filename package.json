@@ -26,23 +26,23 @@
     "chokidar": "^3.6.0",
     "dprint": "^0.46.1",
     "esbuild": "^0.21.4",
-    "htmx.org": "^1.9.12",
     "jsxte": "3.3.1",
     "lightningcss": "^1.26.0",
     "node-os-walk": "^1.0.2",
     "prettier": "^3.3.1",
     "rimraf": "^5.0.5",
-    "typescript": "^5.4.5",
-    "workbox": "^0.0.0",
-    "workbox-expiration": "^7.1.0",
-    "workbox-routing": "^7.1.0",
-    "workbox-strategies": "^7.1.0"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "adwavecss": "0.1.1",
     "adwaveui": "0.0.11",
     "dedent": "^1.5.3",
-    "highlight.js": "^11.10.0"
+    "highlight.js": "^11.10.0",
+    "htmx.org": "^1.9.12",
+    "workbox": "^0.0.0",
+    "workbox-expiration": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
