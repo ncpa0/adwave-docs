@@ -20,9 +20,10 @@ htmx.defineExtension("merge-meta", {
       ) {
         var serverResponse = evt.detail.xhr.response;
         if (
-          api.triggerEvent(document.body, "htmx:beforeHeadMerge", evt.detail)
+          api.triggerEvent(document.body, "htmx:beforeMetaMerge", evt.detail)
         ) {
           mergeHead(serverResponse);
+          api.triggerEvent(document.body, "htmx:afterMetaMerge", evt.detail);
         }
       },
     );
@@ -36,13 +37,14 @@ htmx.defineExtension("merge-meta", {
         >,
       ) {
         if (
-          api.triggerEvent(document.body, "htmx:beforeHeadMerge", evt.detail)
+          api.triggerEvent(document.body, "htmx:beforeMetaMerge", evt.detail)
         ) {
           if (evt.detail.cacheMiss) {
             mergeHead(evt.detail.serverResponse);
           } else {
             mergeHead(evt.detail.item.head);
           }
+          api.triggerEvent(document.body, "htmx:afterMetaMerge", evt.detail);
         }
       },
     );
@@ -62,17 +64,22 @@ function mergeHead(newContent: string) {
   const headStart = newContent.indexOf("<head>");
   if (headStart !== -1) {
     const headEnd = newContent.indexOf("</head>", headStart);
-    const headHtml = newContent.substring(headStart, headEnd);
+    const headHtml = newContent.substring(headStart, headEnd + 7);
     const parsed = new DOMParser().parseFromString(headHtml, "text/html");
     const metaTags = parsed.head.querySelectorAll("meta");
+    const existingTags = Array.from(
+      document.head.querySelectorAll("meta"),
+    ) as HTMLMetaElement[];
 
+    const presentNames: string[] = [];
     for (let i = 0; i < metaTags.length; i++) {
-      const newTag = metaTags[i]!;
-      const name = newTag.getAttribute("name");
+      const newTag = metaTags[i]! as HTMLMetaElement;
+      const name = newTag.name;
       if (!name) continue;
+      presentNames.push(name);
 
-      const existingTag = document.head.querySelector(
-        `meta[name="${name}"]`,
+      const existingTag = existingTags.find(
+        (tag) => tag.name === name,
       );
       if (existingTag) {
         if (existingTag.outerHTML !== newTag.outerHTML) {
@@ -80,6 +87,15 @@ function mergeHead(newContent: string) {
         }
       } else {
         document.head.appendChild(newTag);
+      }
+    }
+
+    for (let i = 0; i < existingTags.length; i++) {
+      const existingTag = existingTags[i]!;
+      const name = existingTag.name;
+      if (!name) continue;
+      if (!presentNames.includes(name)) {
+        existingTag.remove();
       }
     }
   }
