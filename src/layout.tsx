@@ -40,7 +40,6 @@ export function Layout(
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzTtw.ttf" />
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvTtw.ttf" />
         <Style dirname={__dirname} path="./index.css" />
-        <Script package="highlight.js" type="global" />
         <Script package="adwaveui" type="iife" />
         <Script dirname={__dirname} path="./htmx.ts" type="iife" />
         <Script

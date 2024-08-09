@@ -22,6 +22,7 @@
   "devDependencies": {
     "@ncpa0cpl/goserve": "^1.0.3",
     "@types/node": "^18",
+    "@types/prismjs": "^1.26.4",
     "async-await-queue": "^2.1.4",
     "chokidar": "^3.6.0",
     "dprint": "^0.46.1",
@@ -30,6 +31,7 @@
     "lightningcss": "^1.26.0",
     "node-os-walk": "^1.0.2",
     "prettier": "^3.3.1",
+    "prismjs": "^1.29.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.5"
   },
@@ -37,7 +39,6 @@
     "adwavecss": "0.1.1",
     "adwaveui": "0.0.11",
     "dedent": "^1.5.3",
-    "highlight.js": "^11.10.0",
     "htmx.org": "^1.9.12",
     "workbox": "^0.0.0",
     "workbox-expiration": "^7.1.0",

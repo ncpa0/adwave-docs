@@ -49,7 +49,15 @@ module.exports.buildTemplate = async function buildTemplate(
     minify: !IS_DEV,
     write: false,
     sourcemap: IS_DEV ? "inline" : false,
-    external: ["jsxte", "esbuild", "scripts", "prettier", "lightningcss"],
+    external: [
+      "jsxte",
+      "esbuild",
+      "scripts",
+      "prettier",
+      "lightningcss",
+      "prismjs",
+      "prismjs/components/index",
+    ],
     platform: "node",
     plugins: [plugin(srcDir, outDir)],
     alias: {

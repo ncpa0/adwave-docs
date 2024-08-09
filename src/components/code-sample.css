@@ -27,3 +27,38 @@
   flex: 1;
   max-width: 100%;
 }
+
+.dark-theme {
+  .code-sample pre {
+    background: var(--clr-bg-2);
+    border-radius: 8px;
+    padding-left: 1em;
+  }
+}
+
+.light-theme {
+  .code-sample pre {
+    background: var(--clr-bg-2);
+    border-radius: 8px;
+    padding-left: 1em;
+  }
+}
+
+/* unset rules applied by adwavecss due to class name clash */
+.code-sample pre code {
+  & .selector.selector.selector {
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    font-size: 1em;
+    background: none;
+    display: inline;
+    transition: none;
+    height: unset;
+    cursor: inherit;
+    border: none;
+    position: static;
+
+    &:active, &:hover {
+      background: none;
+    }
+  }
+}

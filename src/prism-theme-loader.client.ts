@@ -1,19 +1,19 @@
 // @ts-expect-error
-import hljsThemeLight from "highlight.js/styles/intellij-light.css";
+import themeLight from "prismjs/themes/prism-coy.css";
 // @ts-expect-error
-import hljsThemeDark from "highlight.js/styles/an-old-hope.css";
+import themeDark from "prismjs/themes/prism-tomorrow.css";
 
 const darkCustomCss = /* css */ `
 .code-sample code {
-  font-size: 0.7em;
-  --clr-text: #f9cfff;
+  font-size: 0.9em;
+  --clr-text: #ccc;
 }
 `;
 
 const lightCustomCss = /* css */ `
 .code-sample code {
-  font-size: 0.7em;
-  --clr-text: #373737;
+  font-size: 0.9em;
+  --clr-text: black;
 }
 `;
 
@@ -23,10 +23,10 @@ document.head.appendChild(styleElem);
 function onThemeChange(theme: "dark-theme" | "light-theme") {
   switch (theme) {
     case "dark-theme":
-      styleElem.innerHTML = `${hljsThemeDark}${darkCustomCss}`;
+      styleElem.innerHTML = `${themeDark}${darkCustomCss}`;
       break;
     case "light-theme":
-      styleElem.innerHTML = `${hljsThemeLight}${lightCustomCss}`;
+      styleElem.innerHTML = `${themeLight}${lightCustomCss}`;
       break;
   }
 }
