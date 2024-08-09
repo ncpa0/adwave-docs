@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Checkbox component of the AdwaveCSS framework.";
+
 export default function CheckboxExample() {
   return (
-    <Layout title="Checkbox Example" activePage="checkbox">
+    <Layout
+      title="Checkbox Example"
+      activePage="checkbox"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Checkbox">
         <ExampleSection label="Regular Checkbox">
           <CodeSample>

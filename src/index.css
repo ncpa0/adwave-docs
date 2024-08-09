@@ -1,3 +1,10 @@
+@import "components/code-sample.css";
+@import "components/example.css";
+@import "components/font-size-selector.css";
+@import "components/navbar.css";
+@import "components/theme-switcher.css";
+@import "../node_modules/adwavecss/dist/styles.css";
+
 *:not(body, h1, h2, h3, h4, h5, h6) {
   font-size: inherit;
 }

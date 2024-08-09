@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Message component of the AdwaveCSS framework.";
+
 export default function MessageExample() {
   return (
-    <Layout title="Message Example" activePage="message">
+    <Layout
+      title="Message Example"
+      activePage="message"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Message">
         <ExampleSection label="Message">
           <CodeSample>

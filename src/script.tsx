@@ -66,6 +66,7 @@ type ScriptPropsBase = {
   type?: "module" | "iife" | "global";
   onLoad?: (contents: string) => string | undefined;
   buildOptions?: esbuild.BuildOptions;
+  defer?: boolean;
 };
 
 export type ScriptProps =
@@ -143,6 +144,7 @@ export const Script = async (
     <script
       type={type === "module" ? "module" : "text/javascript"}
       src={url(src)}
+      defer={props.defer}
     />
   );
 };

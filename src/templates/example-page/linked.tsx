@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Input and Button linkingin the AdwaveCSS framework.";
+
 export default function LinkedExample() {
   return (
-    <Layout title="Linked Example" activePage="linked">
+    <Layout
+      title="Linked Example"
+      activePage="linked"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Input And Button Linking">
         <ExampleSection label="Horizontally linked buttons">
           <CodeSample>

@@ -3,9 +3,16 @@ import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Scrollview component of the AdwaveCSS framework.";
+
 export default function ScrollviewExample() {
   return (
-    <Layout title="Scrollview Example" activePage="scrollview">
+    <Layout
+      title="Scrollview Example"
+      activePage="scrollview"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Scrollview">
         <ExampleSection
           label="Spinner"

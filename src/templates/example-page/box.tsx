@@ -5,12 +5,12 @@ import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 import { css } from "../../utils/css";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Box component of the AdwaveCSS framework.";
+
 export default function BoxExample() {
   return (
-    <Layout
-      title="Box Example"
-      activePage="box"
-    >
+    <Layout title="Box Example" activePage="box" description={PAGE_DESCRIPTION}>
       <div class="flexbox">
         <Example title="Box">
           <ExampleSection

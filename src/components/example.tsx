@@ -44,8 +44,16 @@ export function ExampleSection(
               navigator.clipboard.writeText(href.toString());
             `}
           >
-            <img id="link-dark" src={url("assets/link-dark.svg")} />
-            <img id="link-light" src={url("assets/link-light.svg")} />
+            <img
+              id="link-dark"
+              src={url("assets/link-dark.svg")}
+              alt={`Copy link to "${label}"`}
+            />
+            <img
+              id="link-light"
+              src={url("assets/link-light.svg")}
+              alt={`Copy link to "${label}"`}
+            />
           </button>
           <span>{label}</span>
         </h5>

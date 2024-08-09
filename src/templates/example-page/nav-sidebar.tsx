@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Nav Sidebar component of the AdwaveCSS framework.";
+
 export default function NavSidebarExample() {
   return (
-    <Layout title="Navigation Sidebar Example" activePage="nav-sidebar">
+    <Layout
+      title="Navigation Sidebar Example"
+      activePage="nav-sidebar"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Nav Sidebar">
         <ExampleSection label="Nav Sidebar">
           <CodeSample>

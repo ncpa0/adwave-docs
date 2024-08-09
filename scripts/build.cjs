@@ -106,9 +106,9 @@ build()
           if (ev === "addDir") return;
 
           if (
-            fPath.includes("src/assets") &&
-            !fPath.includes("src/assets/js") &&
-            !fPath.includes("src/assets/css")
+            fPath.includes("src/assets")
+            && !fPath.includes("src/assets/js")
+            && !fPath.includes("src/assets/css")
           ) {
             console.log(
               `Asset changed, copying (${path.relative(p("."), fPath)})`,

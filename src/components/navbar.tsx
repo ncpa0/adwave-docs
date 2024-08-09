@@ -1,11 +1,10 @@
 import { Box, NavSidebar } from "adwavecss";
-import { Script } from "../script";
+import HamburgerDark from "../assets/burger-dark.svg";
+import HamburgerLight from "../assets/burger-light.svg";
 import { cls } from "../utils/cls";
 import { url } from "../utils/url";
 import { FontSizeSelector } from "./font-size-selector";
 import { ThemeSwitcher } from "./theme-switcher";
-import HamburgerDark from "../assets/burger-dark.svg";
-import HamburgerLight from "../assets/burger-light.svg";
 
 const NavbarLink = (props: {
   href: string;
@@ -190,7 +189,6 @@ export const Navbar = (props: { activePage?: string }) => {
     <div class={cls(Box.box, "bg-3")}>
       <LeftNavbarDesktop activePage={props.activePage} />
       <LeftNavbarMobile activePage={props.activePage} />
-      <Script dirname={__dirname} path="./navbar.client.tsx" />
     </div>
   );
 };

@@ -49,7 +49,7 @@ module.exports.buildTemplate = async function buildTemplate(
     minify: !IS_DEV,
     write: false,
     sourcemap: IS_DEV ? "inline" : false,
-    external: ["jsxte", "esbuild", "scripts", "prettier"],
+    external: ["jsxte", "esbuild", "scripts", "prettier", "lightningcss"],
     platform: "node",
     plugins: [plugin(srcDir, outDir)],
     alias: {
@@ -70,10 +70,11 @@ module.exports.buildTemplate = async function buildTemplate(
   /** @type {{ contents: string; outFile: string }[]} */
   const registeredExtFiles = [];
   const registerExternalFile = (contents, name, type) => {
-    const hashedName = createHash(`${name}_${contents}`, 8);
+    const presentationName = name.split(".")[0];
+    const hash = createHash(`${name}_${contents}`, 8);
     switch (type) {
       case "css": {
-        const fPath = `/assets/css/${hashedName}.css`;
+        const fPath = `/assets/css/${presentationName}_${hash}.css`;
         registeredExtFiles.push({
           contents,
           outFile: path.join(outDir, fPath),
@@ -81,7 +82,7 @@ module.exports.buildTemplate = async function buildTemplate(
         return fPath;
       }
       case "js": {
-        const fPath = `/assets/js/${hashedName}.js`;
+        const fPath = `/assets/js/${presentationName}_${hash}.js`;
         registeredExtFiles.push({
           contents,
           outFile: path.join(outDir, fPath),
@@ -115,7 +116,7 @@ module.exports.buildTemplate = async function buildTemplate(
 
   // make sure directory exists
   await fs.promises.mkdir(baseDir, { recursive: true });
-  await fs.promises.writeFile(htmlOutFile, html, "utf8");
+  await fs.promises.writeFile(htmlOutFile, `<!DOCTYPE html>\n${html}`, "utf8");
 
   await Promise.all(
     registeredExtFiles.map(({ contents, outFile }) => {

@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the List component of the AdwaveCSS framework.";
+
 export default function ListExample() {
   return (
-    <Layout title="List Example" activePage="list">
+    <Layout
+      title="List Example"
+      activePage="list"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="List">
         <ExampleSection label="Regular list">
           <CodeSample>

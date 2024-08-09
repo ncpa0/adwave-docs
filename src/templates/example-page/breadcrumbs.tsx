@@ -2,11 +2,15 @@ import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Breadcrumbs component of the AdwaveCSS framework.";
+
 export default function BoxExample() {
   return (
     <Layout
       title="Breadcrumbs Example"
       activePage="breadcrumbs"
+      description={PAGE_DESCRIPTION}
     >
       <div class="flexbox">
         <Example title="Box">

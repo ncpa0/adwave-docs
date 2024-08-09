@@ -1,5 +1,5 @@
-import esbuild from "esbuild";
 import { ComponentApi } from "jsxte/dist/types/component-api/component-api";
+import { bundleAsync, TransformResult } from "lightningcss";
 import path from "node:path";
 import process from "node:process";
 import EFC from "scripts/external-files-context";
@@ -22,26 +22,41 @@ export const Style = async (
     },
   componentApi: ComponentApi,
 ) => {
-  const options: esbuild.BuildOptions = {
-    write: false,
-    minify: !IS_DEV,
-    keepNames: true,
-    platform: "browser",
-  };
+  let name = "";
+  let filepath = "";
 
   if (props.path) {
-    options.entryPoints = [path.join(props.dirname, props.path)];
+    filepath = path.resolve(props.dirname, props.path);
+    name = props.path;
   } else {
-    options.entryPoints = [props.package!];
+    filepath = require.resolve(props.package!);
+    name = props.package!;
   }
 
-  const result = await esbuild.build(options);
+  let result: TransformResult;
+  try {
+    result = await bundleAsync({
+      filename: filepath,
+      minify: !IS_DEV,
+      resolver: {
+        resolve: (specifier, from) => {
+          if (
+            specifier.startsWith(
+              "https://fonts.googleapis.com/css2?family=Noto+Sans",
+            )
+          ) {
+            return path.resolve(__dirname, "./assets/noto-sans.css");
+          }
+          return path.join(path.dirname(from), specifier);
+        },
+      },
+    });
+  } catch (err) {
+    console.error("css build failed", err);
+    return <></>;
+  }
 
-  if (result.errors.length > 0) throw new Error(result.errors[0]!.text);
-
-  const contents = `/* ${options.entryPoints[0]} */\n${
-    result.outputFiles![0]!.text.trim()
-  }`;
+  const contents = `/* ${name} */\n${result.code}`;
 
   if (props.inline) {
     return <style>{contents}</style>;
@@ -55,11 +70,6 @@ export const Style = async (
   );
 
   return (
-    <link
-      rel="stylesheet"
-      href={url(src)}
-      type="text/css"
-      media="screen"
-    />
+    <link rel="stylesheet" href={url(src)} type="text/css" media="screen" />
   );
 };

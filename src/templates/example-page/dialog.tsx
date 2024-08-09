@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Dialog component of the AdwaveCSS framework.";
+
 export default function DialogExample() {
   return (
-    <Layout title="Dialog Example" activePage="dialog">
+    <Layout
+      title="Dialog Example"
+      activePage="dialog"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Dialog">
         <ExampleSection label="Dialog">
           <CodeSample>

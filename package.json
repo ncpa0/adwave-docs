@@ -28,6 +28,7 @@
     "esbuild": "^0.21.4",
     "htmx.org": "^1.9.12",
     "jsxte": "3.3.1",
+    "lightningcss": "^1.26.0",
     "node-os-walk": "^1.0.2",
     "prettier": "^3.3.1",
     "rimraf": "^5.0.5",
@@ -38,7 +39,7 @@
     "workbox-strategies": "^7.1.0"
   },
   "dependencies": {
-    "adwavecss": "0.1.0",
+    "adwavecss": "0.1.1",
     "adwaveui": "0.0.11",
     "dedent": "^1.5.3",
     "highlight.js": "^11.10.0"

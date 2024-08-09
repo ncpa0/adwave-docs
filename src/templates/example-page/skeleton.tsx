@@ -4,11 +4,15 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Skeleton component of the AdwaveCSS framework.";
+
 export default function SkeletonExample() {
   return (
     <Layout
       title="Skeleton Example"
       activePage="skeleton"
+      description={PAGE_DESCRIPTION}
     >
       <div class="flexbox">
         <Example title="Skeleton">

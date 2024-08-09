@@ -3,9 +3,16 @@ import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Alert component of the AdwaveCSS framework.";
+
 export default function AlertExample() {
   return (
-    <Layout title="Alert Example" activePage="alert">
+    <Layout
+      title="Alert Example"
+      activePage="alert"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Alert">
         <ExampleSection label="Info Alert">
           <CodeSample>

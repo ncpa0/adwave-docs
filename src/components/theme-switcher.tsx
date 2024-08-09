@@ -1,5 +1,4 @@
 import { Button, Input } from "adwavecss";
-import { Script } from "../script";
 import { cls } from "../utils/cls";
 
 export function ThemeSwitcher() {
@@ -12,18 +11,10 @@ export function ThemeSwitcher() {
         >
           Dark Theme
         </button>
-        <button
-          class={Button.button}
-          data-theme="light-theme"
-        >
+        <button class={Button.button} data-theme="light-theme">
           Light Theme
         </button>
       </div>
-      <Script
-        dirname={__dirname}
-        path="./theme-switcher.client.ts"
-        type="iife"
-      />
     </>
   );
 }

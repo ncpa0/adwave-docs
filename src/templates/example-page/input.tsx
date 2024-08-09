@@ -5,11 +5,15 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Input component of the AdwaveCSS framework and the AdwaveUI library.";
+
 export default function InputExample() {
   return (
     <Layout
       title="Input Example"
       activePage="input"
+      description={PAGE_DESCRIPTION}
     >
       <Example title="Input">
         <ExampleSection label="Input with styling only">
@@ -21,11 +25,7 @@ export default function InputExample() {
                 disabled
               >
               </input>
-              <input
-                class={cls(Input.input)}
-                placeholder="Password"
-              >
-              </input>
+              <input class={cls(Input.input)} placeholder="Password"></input>
             </div>
           </CodeSample>
         </ExampleSection>

@@ -4,9 +4,16 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Card component of the AdwaveCSS framework.";
+
 export default function CardExample() {
   return (
-    <Layout title="Card Example" activePage="card">
+    <Layout
+      title="Card Example"
+      activePage="card"
+      description={PAGE_DESCRIPTION}
+    >
       <Example title="Card">
         <ExampleSection label="Regular Card">
           <CodeSample>

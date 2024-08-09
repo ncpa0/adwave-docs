@@ -3,11 +3,15 @@ import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Selector component of the AdwaveCSS framework and the AdwaveUI library.";
+
 export default function SelectorExample() {
   return (
     <Layout
       title="Selector Example"
       activePage="selector"
+      description={PAGE_DESCRIPTION}
     >
       <Example title="Selector">
         <ExampleSection label="Regular Selector">
@@ -18,10 +22,7 @@ export default function SelectorExample() {
                 onchange="document.querySelector('#selector-value').innerText = event.detail.value;"
               >
                 <adw-option value="de">German</adw-option>
-                <adw-option
-                  value="en"
-                  selected="true"
-                >
+                <adw-option value="en" selected="true">
                   English
                 </adw-option>
                 <adw-option value="es">Spanish</adw-option>
@@ -41,15 +42,9 @@ export default function SelectorExample() {
         </ExampleSection>
         <ExampleSection label="Upward Selector">
           <CodeSample>
-            <adw-selector
-              placeholder="Select language"
-              orientation="up"
-            >
+            <adw-selector placeholder="Select language" orientation="up">
               <adw-option value="de">German</adw-option>
-              <adw-option
-                value="en"
-                selected="true"
-              >
+              <adw-option value="en" selected="true">
                 English
               </adw-option>
               <adw-option value="es">Spanish</adw-option>
@@ -95,10 +90,7 @@ export default function SelectorExample() {
           <CodeSample>
             <adw-selector disabled>
               <adw-option value="de">German</adw-option>
-              <adw-option
-                value="en"
-                selected="true"
-              >
+              <adw-option value="en" selected="true">
                 English
               </adw-option>
             </adw-selector>

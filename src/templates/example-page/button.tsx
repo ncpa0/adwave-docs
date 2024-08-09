@@ -4,11 +4,15 @@ import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
 import { cls } from "../../utils/cls";
 
+const PAGE_DESCRIPTION =
+  "Documentation and examples for the Button component of the AdwaveCSS framework.";
+
 export default function ButtonExample() {
   return (
     <Layout
       title="Button - Example"
       activePage="button"
+      description={PAGE_DESCRIPTION}
     >
       <div class="flexbox column">
         <Example title="Button">

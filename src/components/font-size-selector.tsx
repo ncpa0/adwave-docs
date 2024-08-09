@@ -32,10 +32,6 @@ export const FontSizeSelector = () => {
           +
         </button>
       </div>
-      <Script
-        dirname={__dirname}
-        path="./font-size-selector.client.ts"
-      />
     </>
   );
 };

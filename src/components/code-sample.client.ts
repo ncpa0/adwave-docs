@@ -7,18 +7,30 @@ declare global {
 }
 
 class CodeSample extends HTMLDivElement {
-  connectedCallback() {
+  static registerLanguages = () => {
     HighlightJS.registerLanguage("html", getXmlLanguage);
     HighlightJS.registerLanguage("css", getCssLanguage);
+    this.registerLanguages = () => {};
+  };
+
+  private highlight() {
+    const codeElem = this.querySelector("code");
+    if (codeElem!.dataset["highlighted"] !== "yes") {
+      HighlightJS.highlightElement(codeElem!);
+    }
+  }
+
+  connectedCallback() {
+    CodeSample.registerLanguages();
 
     let codeElem = this.getCodeElement();
     if (codeElem) {
-      HighlightJS.highlightElement(this.querySelector("code")!);
+      this.highlight();
     } else {
       const interval = setInterval(() => {
         codeElem = this.getCodeElement();
         if (codeElem) {
-          HighlightJS.highlightElement(this.querySelector("code")!);
+          this.highlight();
           clearInterval(interval);
         }
       }, 10);
