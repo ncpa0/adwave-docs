@@ -170,7 +170,7 @@ const plugin = (srcDir, outDir) => ({
     build.onLoad({ filter: /\.svg$/ }, async (args) => {
       const relPath = path.relative(srcDir, args.path);
       await fs.promises.copyFile(args.path, path.join(outDir, relPath));
-      const svgPath = relPath;
+      const svgPath = path.isAbsolute(relPath) ? relPath : `/${relPath}`;
 
       const componentName = path
         .basename(args.path, ".svg")
