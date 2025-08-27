@@ -167,11 +167,10 @@ const plugin = (srcDir, outDir) => ({
       return { contents: code, loader: "tsx" };
     });
 
-    const BASE_URL = process.env.BASE_URL ?? "/docs/";
     build.onLoad({ filter: /\.svg$/ }, async (args) => {
       const relPath = path.relative(srcDir, args.path);
       await fs.promises.copyFile(args.path, path.join(outDir, relPath));
-      const svgPath = path.join(BASE_URL, relPath);
+      const svgPath = relPath;
 
       const componentName = path
         .basename(args.path, ".svg")

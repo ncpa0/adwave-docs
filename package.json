@@ -15,8 +15,8 @@
   },
   "scripts": {
     "build": "node ./scripts/build.cjs --clean",
-    "build:dev": "NODE_ENV=development BASE_URL=/ node ./scripts/build.cjs --dev",
-    "start:dev": "NODE_ENV=development BASE_URL=/ node ./scripts/build.cjs --dev --serve --watch",
+    "build:dev": "NODE_ENV=development node ./scripts/build.cjs --dev",
+    "start:dev": "NODE_ENV=development node ./scripts/build.cjs --dev --serve --watch",
     "fmt": "dprint fmt"
   },
   "devDependencies": {
