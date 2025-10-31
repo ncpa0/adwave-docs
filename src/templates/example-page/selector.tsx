@@ -59,6 +59,27 @@ export default function SelectorExample() {
           </CodeSample>
         </ExampleSection>
         <ExampleSection
+          label="Auto orientation Selector"
+          description="Selector can be set to automatically detect it's own position within the viewport and select an appropriate orientation based on that."
+        >
+          <CodeSample>
+            <adw-selector placeholder="Select language" orientation="detect">
+              <adw-option value="de">German</adw-option>
+              <adw-option value="en" selected="true">
+                English
+              </adw-option>
+              <adw-option value="es">Spanish</adw-option>
+              <adw-option value="fr">French</adw-option>
+              <adw-option value="it">Italian</adw-option>
+              <adw-option value="ja">Japanese</adw-option>
+              <adw-option value="pl">Polish</adw-option>
+              <adw-option value="pt">Portuguese</adw-option>
+              <adw-option value="ru">Russian</adw-option>
+              <adw-option value="zh">Chinese</adw-option>
+            </adw-selector>
+          </CodeSample>
+        </ExampleSection>
+        <ExampleSection
           label="Inert Selector Option"
           description="Inert selector option will display in the dropdown but cannot be interacted with."
         >

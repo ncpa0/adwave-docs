@@ -1,4 +1,12 @@
 import { Box, Theme } from "adwavecss";
+import type {
+  AdwInputAttributes,
+  AdwSelectorAttributes,
+  AdwSelectorOptionAttributes,
+  AdwSliderAttributes,
+  AdwSwitchAttributes,
+} from "adwaveui";
+import { HTMLProps } from "jsxte";
 import { GithubBadge } from "./components/gh-badge";
 import { Navbar } from "./components/navbar";
 import { Script } from "./script";
@@ -6,10 +14,29 @@ import { Style } from "./style";
 import { cls } from "./utils/cls";
 import { url } from "./utils/url";
 
+type ToLowercase<K> = K extends string ? Lowercase<K> : K;
+
+type AttrHtmlify<Attr> = {
+  [K in keyof Attr as ToLowercase<K>]?: Attr[K] extends
+    string | number | bigint | boolean | null | undefined
+    ? `${Exclude<Attr[K], null | undefined>}` | Attr[K]
+    : string;
+};
+
 declare global {
   namespace JSXTE {
     interface BaseHTMLTagProps {
       preload?: string;
+    }
+  }
+
+  namespace JSX {
+    interface IntrinsicElements {
+      "adw-input": HTMLProps<AttrHtmlify<AdwInputAttributes>>;
+      "adw-selector": HTMLProps<AttrHtmlify<AdwSelectorAttributes>>;
+      "adw-option": HTMLProps<AttrHtmlify<AdwSelectorOptionAttributes>>;
+      "adw-switch": HTMLProps<AttrHtmlify<AdwSwitchAttributes>>;
+      "adw-slider": HTMLProps<AttrHtmlify<AdwSliderAttributes>>;
     }
   }
 }
@@ -40,6 +67,7 @@ export function Layout(
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzTtw.ttf" />
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvTtw.ttf" />
         <Style dirname={__dirname} path="./index.css" />
+        <Style package="adwaveui/dist/styles.css" />
         <Script package="adwaveui" type="iife" />
         <Script dirname={__dirname} path="./htmx.ts" type="iife" />
         <Script

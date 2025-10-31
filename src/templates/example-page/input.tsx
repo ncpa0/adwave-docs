@@ -1,5 +1,4 @@
 import { Input } from "adwavecss";
-import type {} from "adwaveui";
 import { CodeSample } from "../../components/code-sample";
 import { Example, ExampleSection } from "../../components/example";
 import { Layout } from "../../layout";
@@ -39,14 +38,14 @@ export default function InputExample() {
             <div style="display: grid; grid-template-rows: 1fr 1fr; grid-gap: 1em;">
               <adw-input
                 placeholder="Select a country"
-                suggestions="USA;Canada;Brazil;England;Germany;France;Spain;Poland;Russia;China;Japan"
+                suggestions="USA,Canada,Brazil,England,Germany,France,Spain,Poland,Russia,China,Japan"
                 fuzzy="true"
               >
               </adw-input>
               <adw-input
                 placeholder="Select a country"
                 suggestionsorientation="up"
-                suggestions="USA;Canada;Brazil;England;Germany;France;Spain;Poland;Russia;China;Japan"
+                suggestions="USA,Canada,Brazil,England,Germany,France,Spain,Poland,Russia,China,Japan"
                 fuzzy="true"
               >
               </adw-input>

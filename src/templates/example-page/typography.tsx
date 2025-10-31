@@ -19,17 +19,20 @@ export default function TypographyExample() {
       <Example title="Typography">
         <ExampleSection label="Header">
           <CodeSample>
-            <span class={Typography.header}>Lorem ipsum dolor sit amet</span>
-          </CodeSample>
-        </ExampleSection>
-        <ExampleSection label="Label">
-          <CodeSample>
-            <span class={Typography.label}>Lorem ipsum dolor sit amet</span>
+            <h1 class={Typography.header_xxl}>Lorem ipsum dolor sit amet</h1>
+            <h2 class={Typography.header_xl}>Lorem ipsum dolor sit amet</h2>
+            <h3 class={Typography.header}>Lorem ipsum dolor sit amet</h3>
+            <h4 class={Typography.header_sm}>Lorem ipsum dolor sit amet</h4>
           </CodeSample>
         </ExampleSection>
         <ExampleSection label="Text">
           <CodeSample>
             <span class={Typography.text}>{loremIpsum}</span>
+          </CodeSample>
+        </ExampleSection>
+        <ExampleSection label="Label">
+          <CodeSample>
+            <span class={Typography.label}>Lorem ipsum dolor sit amet</span>
           </CodeSample>
         </ExampleSection>
         <ExampleSection label="Subtitle">

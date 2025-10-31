@@ -127,8 +127,10 @@ module.exports.buildTemplate = async function buildTemplate(
   await fs.promises.writeFile(htmlOutFile, `<!DOCTYPE html>\n${html}`, "utf8");
 
   await Promise.all(
-    registeredExtFiles.map(({ contents, outFile }) => {
-      return fs.promises.writeFile(outFile, contents, "utf8");
+    registeredExtFiles.map(async ({ contents, outFile }) => {
+      const dirpath = path.dirname(outFile);
+      await fs.promises.mkdir(dirpath, { recursive: true });
+      await fs.promises.writeFile(outFile, contents, "utf8");
     }),
   );
 };
