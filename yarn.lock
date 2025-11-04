@@ -192,7 +192,12 @@
   resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.4.tgz#1a9e1074619ce1d7322669e5b46fbe823925103a"
   integrity sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==
 
-adwavecss@0.1.2, adwavecss@>=0.1.2:
+adwavecss@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.1.tgz#e0d14f54a42549ee4fd9d14e19d4615b77b6d4f6"
+  integrity sha512-rzWtebwl9zJoYx3DN33dfVAb0jMEArL2AmKpK9EbLINyB3reKtpMCKRjdZOV0NrScSFW2UelaO/ZCAoRLmKi+w==
+
+adwavecss@>=0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.1.2.tgz#491a5150c1b3d48d8f065f942efd3bb2583d14cc"
   integrity sha512-uvjOPddFBGMdO1MMhVnnkmIiEIKQPETGyFZ8K3BXYFTChhGvobE4ZIGr2vXOXC9rJkHhSsqZqfderI0ICqDPxQ==

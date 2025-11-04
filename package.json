@@ -36,8 +36,8 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "adwavecss": "0.1.2",
-    "adwaveui": "0.1.0",
+    "adwavecss": "0.2.1",
+    "adwaveui": "0.2.0",
     "dedent": "^1.5.3",
     "htmx.org": "^1.9.12",
     "workbox": "^0.0.0",

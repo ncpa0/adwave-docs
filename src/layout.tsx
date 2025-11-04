@@ -1,5 +1,6 @@
 import { Box, Theme } from "adwavecss";
 import type {
+  AdwCalendar,
   AdwInputAttributes,
   AdwSelectorAttributes,
   AdwSelectorOptionAttributes,
@@ -37,6 +38,7 @@ declare global {
       "adw-option": HTMLProps<AttrHtmlify<AdwSelectorOptionAttributes>>;
       "adw-switch": HTMLProps<AttrHtmlify<AdwSwitchAttributes>>;
       "adw-slider": HTMLProps<AttrHtmlify<AdwSliderAttributes>>;
+      "adw-calendar": HTMLProps<AttrHtmlify<AdwCalendar>>;
     }
   }
 }
@@ -67,7 +69,6 @@ export function Layout(
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzTtw.ttf" />
         <PreloadFont link="https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvTtw.ttf" />
         <Style dirname={__dirname} path="./index.css" />
-        <Style package="adwaveui/dist/styles.css" />
         <Script package="adwaveui" type="iife" />
         <Script dirname={__dirname} path="./htmx.ts" type="iife" />
         <Script

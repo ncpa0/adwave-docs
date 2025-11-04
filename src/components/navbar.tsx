@@ -38,6 +38,11 @@ const NavbarAllLinks = (props: { activePage?: string }) => {
   return (
     <>
       <NavbarLink
+        label="Calendar"
+        isActive={props.activePage === "calendar"}
+        href="/example-page/calendar.html"
+      />
+      <NavbarLink
         label="Input"
         isActive={props.activePage === "input"}
         href="/example-page/input.html"
