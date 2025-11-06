@@ -19,7 +19,7 @@ export default function SelectorExample() {
             <div style="display: grid; grid-template-rows: 1fr 1fr; grid-gap: 1em;">
               <adw-selector
                 placeholder="Select language"
-                onchange="document.querySelector('#selector-value').innerText = event.detail.value;"
+                onchange="document.querySelector('#selector-value').innerText = event.value;"
               >
                 <adw-option value="de">German</adw-option>
                 <adw-option value="en" selected="true">

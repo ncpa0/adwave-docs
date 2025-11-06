@@ -22,7 +22,7 @@ export default function SliderExample() {
                 max={100}
                 value={50}
                 step={5}
-                onchange="document.querySelector('#slider-value').innerText = event.target.value"
+                onchange="document.querySelector('#slider-value').innerText = event.value"
               />
               <span class={Typography.text}>
                 Current value: <span id="slider-value">50</span>
