@@ -202,14 +202,14 @@ adwavecss@>=0.2.1:
   resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.1.tgz#e0d14f54a42549ee4fd9d14e19d4615b77b6d4f6"
   integrity sha512-rzWtebwl9zJoYx3DN33dfVAb0jMEArL2AmKpK9EbLINyB3reKtpMCKRjdZOV0NrScSFW2UelaO/ZCAoRLmKi+w==
 
-adwaveui@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.2.0.tgz#8823d84968a500fe27a9df9a3ca055b23bf6e845"
-  integrity sha512-3EZ8Ut147q7Qaszl+t8Jsj2vw6pEmJDAvuU5dd9ZVtDwKgY2ADQiaEXApVBbg4QUqUMi7lz+orSENTWcDVkmQg==
+adwaveui@0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.2.4.tgz#a62af6a28a445fc9a3d20cf1de841a54cee1e4f4"
+  integrity sha512-srcQv2p3Qrsaw7vbOXEJk0t796HRkGaVCmRepyDe8B8Jh8/r8iCht1XYR64wUukG3ds2as+gP1RkYfFRxXBxpQ==
   dependencies:
     "@ncpa0cpl/vanilla-jsx" "0.0.1-alpha.44"
     adwavecss ">=0.2.1"
-    wc_toolkit "^0.0.6"
+    wc_toolkit "^0.1.1"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -697,10 +697,10 @@ typescript@^5.4.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
-wc_toolkit@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.0.6.tgz#4296868b9cdc9a1aea626f681c8f8faeebc7962d"
-  integrity sha512-iTS2/JnmfYimSmTG75iWanhroaIorCuNBHtusKN6sPk51tnH9nlI4YT4Whn0nrSfHl97CPP0eIlj8hBdUaC6lg==
+wc_toolkit@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.1.1.tgz#0d527d58ae7c7393a7c1535b04d7631ff461a46f"
+  integrity sha512-KTerjANEWmkwgFBxh3NCT9Gi2Q2lUYfsBNL208FjcE7D6+nNs9q/5vrM9rpxnFnq/bfJZrd18pPkXeDXvvMVKg==
 
 which@^2.0.1:
   version "2.0.2"

@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "adwavecss": "0.2.5",
-    "adwaveui": "0.2.0",
+    "adwaveui": "0.2.4",
     "dedent": "^1.5.3",
     "htmx.org": "^1.9.12",
     "workbox": "^0.0.0",
