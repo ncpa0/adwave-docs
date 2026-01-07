@@ -19,10 +19,11 @@ export default function SelectorExample() {
             <div style="display: grid; grid-template-rows: 1fr 1fr; grid-gap: 1em;">
               <adw-selector
                 placeholder="Select language"
-                onchange="document.querySelector('#selector-value').innerText = event.value;"
+                onchange="document.querySelector('#selector-value').innerText = event.value ?? 'none selected';"
+                allowunselect
               >
                 <adw-option value="de">German</adw-option>
-                <adw-option value="en" selected="true">
+                <adw-option value="en">
                   English
                 </adw-option>
                 <adw-option value="es">Spanish</adw-option>
@@ -35,7 +36,7 @@ export default function SelectorExample() {
                 <adw-option value="zh">Chinese</adw-option>
               </adw-selector>
               <span class={Typography.text}>
-                Current value: <span id="selector-value">en</span>
+                Current value: <span id="selector-value">none selected</span>
               </span>
             </div>
           </CodeSample>
@@ -44,7 +45,7 @@ export default function SelectorExample() {
           <CodeSample>
             <adw-selector placeholder="Select language" orientation="up">
               <adw-option value="de">German</adw-option>
-              <adw-option value="en" selected="true">
+              <adw-option value="en" selected>
                 English
               </adw-option>
               <adw-option value="es">Spanish</adw-option>
@@ -65,7 +66,7 @@ export default function SelectorExample() {
           <CodeSample>
             <adw-selector placeholder="Select language" orientation="detect">
               <adw-option value="de">German</adw-option>
-              <adw-option value="en" selected="true">
+              <adw-option value="en" selected>
                 English
               </adw-option>
               <adw-option value="es">Spanish</adw-option>

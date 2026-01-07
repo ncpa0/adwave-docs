@@ -192,24 +192,19 @@
   resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.4.tgz#1a9e1074619ce1d7322669e5b46fbe823925103a"
   integrity sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==
 
-adwavecss@0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.5.tgz#21564c309fec1d1cea3941798f764903cd1010e3"
-  integrity sha512-GZARFqC2Yh7398WIAwj3lEW/oZvAHjg1ZpS6spj6OImfkYCa5aznq70KhWGav+Qh3HwJAoZH4bXCBPGDXXK5vw==
+adwavecss@0.2.6, adwavecss@>=0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.6.tgz#d5002752f434e4da48362c8b34213176e2f6430f"
+  integrity sha512-6k1boSCjcYJe31+9BocXULyNX7GTsZgvA48ulrHW7/6UpAAf1KwlY1CNaxR2s1DPd61dVyixDndr7Tn89r7GPQ==
 
-adwavecss@>=0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.1.tgz#e0d14f54a42549ee4fd9d14e19d4615b77b6d4f6"
-  integrity sha512-rzWtebwl9zJoYx3DN33dfVAb0jMEArL2AmKpK9EbLINyB3reKtpMCKRjdZOV0NrScSFW2UelaO/ZCAoRLmKi+w==
-
-adwaveui@0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.2.4.tgz#a62af6a28a445fc9a3d20cf1de841a54cee1e4f4"
-  integrity sha512-srcQv2p3Qrsaw7vbOXEJk0t796HRkGaVCmRepyDe8B8Jh8/r8iCht1XYR64wUukG3ds2as+gP1RkYfFRxXBxpQ==
+adwaveui@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.3.0.tgz#9ef937039dbef426bd2d431fd686a3392e78bd3d"
+  integrity sha512-k8xnnz+AELeIVuplVF204gkVRjiTYTOpwEJFHu2omEKCXFgrLL2Mm9AzHRjBfdrnRXOMiRZYfbVf3uO4aYH4ng==
   dependencies:
     "@ncpa0cpl/vanilla-jsx" "0.0.1-alpha.44"
-    adwavecss ">=0.2.1"
-    wc_toolkit "^0.1.1"
+    adwavecss ">=0.2.6"
+    wc_toolkit "^0.1.2"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -697,10 +692,10 @@ typescript@^5.4.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
-wc_toolkit@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.1.1.tgz#0d527d58ae7c7393a7c1535b04d7631ff461a46f"
-  integrity sha512-KTerjANEWmkwgFBxh3NCT9Gi2Q2lUYfsBNL208FjcE7D6+nNs9q/5vrM9rpxnFnq/bfJZrd18pPkXeDXvvMVKg==
+wc_toolkit@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.1.2.tgz#71c94dbf1622f0a25081194847eeda6e9906adee"
+  integrity sha512-L9UDOlos4Kevk4nHyCCsI70yd1LwJh7TjqmpSQNNIbMCSZ1uMdI7QCtQu4IN6SdNBjOHMxizRp7y0jKdeJmguA==
 
 which@^2.0.1:
   version "2.0.2"
