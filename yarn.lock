@@ -169,10 +169,10 @@
   resolved "https://registry.yarnpkg.com/@ncpa0cpl/goserve/-/goserve-1.0.3.tgz#35142e857d2529f85ea80b6cb891d10c1bd8b711"
   integrity sha512-5UU6m1bWemoXKF+3rcnatBMnXQ91v98RS5VlGgQRlOCzis/AaSngy0PlX/g1fwYjqUBQloW5JBwP2oCTPBWRjA==
 
-"@ncpa0cpl/vanilla-jsx@0.0.1-alpha.44":
-  version "0.0.1-alpha.44"
-  resolved "https://registry.yarnpkg.com/@ncpa0cpl/vanilla-jsx/-/vanilla-jsx-0.0.1-alpha.44.tgz#2feb42232dfaa98482d33638b1ddb512f9917742"
-  integrity sha512-uyuNSCUL3eLueu3K760vMK/Fc7QCq+EwNIzdepWzz6g9cligzTBj+h/zk9N12nY7GLoYNoVBU/gLWmPrqMeNDg==
+"@ncpa0cpl/vanilla-jsx@0.0.1-alpha.54":
+  version "0.0.1-alpha.54"
+  resolved "https://registry.yarnpkg.com/@ncpa0cpl/vanilla-jsx/-/vanilla-jsx-0.0.1-alpha.54.tgz#e5c2b2c3cd74719af24040a37998f6f5ea028717"
+  integrity sha512-ij5zmn33EUVxz2OrtfCZxBdS3LGyXa1sLE6Tul3EFv1YDSWLwQcKCieoX2iTqQtnJWLju1oVoG+c38r6OYplAQ==
   dependencies:
     html-element-attributes "^3.4.0"
     immer "^10.1.1"
@@ -192,19 +192,19 @@
   resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.26.4.tgz#1a9e1074619ce1d7322669e5b46fbe823925103a"
   integrity sha512-rlAnzkW2sZOjbqZ743IHUhFcvzaGbqijwOu8QZnZCjfQzBqFE3s4lOTJEsxikImav9uzz/42I+O7YUs1mWgMlg==
 
-adwavecss@0.2.6, adwavecss@>=0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.2.6.tgz#d5002752f434e4da48362c8b34213176e2f6430f"
-  integrity sha512-6k1boSCjcYJe31+9BocXULyNX7GTsZgvA48ulrHW7/6UpAAf1KwlY1CNaxR2s1DPd61dVyixDndr7Tn89r7GPQ==
+adwavecss@0.4.0, adwavecss@>=0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/adwavecss/-/adwavecss-0.4.0.tgz#4a1d705220a08fedd0b3f2a2aa69f5547c85bae7"
+  integrity sha512-VSCHVgT3si0R0q3wUhiupe/zZDBGDQQc9K0VGPEG5yCZGhLWpTLgB0elRms71cTV9PyJ+DQtU7Xw6zGfsGc2sQ==
 
-adwaveui@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.3.0.tgz#9ef937039dbef426bd2d431fd686a3392e78bd3d"
-  integrity sha512-k8xnnz+AELeIVuplVF204gkVRjiTYTOpwEJFHu2omEKCXFgrLL2Mm9AzHRjBfdrnRXOMiRZYfbVf3uO4aYH4ng==
+adwaveui@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/adwaveui/-/adwaveui-0.4.0.tgz#4a53706a4c68e538b7dbbdb7620c643fe282b8d8"
+  integrity sha512-PhXGnJmb6pOorRPmpobZcFx+XiG7U0b2ujnzOOB9I9nHyPmGxGloflQniU3x0hM2L9ALPGZvRdjERvjGzANoNw==
   dependencies:
-    "@ncpa0cpl/vanilla-jsx" "0.0.1-alpha.44"
-    adwavecss ">=0.2.6"
-    wc_toolkit "^0.1.2"
+    "@ncpa0cpl/vanilla-jsx" "0.0.1-alpha.54"
+    adwavecss ">=0.4.0"
+    wc_toolkit "^0.1.4"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -692,10 +692,10 @@ typescript@^5.4.5:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.5.tgz#42ccef2c571fdbd0f6718b1d1f5e6e5ef006f611"
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
-wc_toolkit@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.1.2.tgz#71c94dbf1622f0a25081194847eeda6e9906adee"
-  integrity sha512-L9UDOlos4Kevk4nHyCCsI70yd1LwJh7TjqmpSQNNIbMCSZ1uMdI7QCtQu4IN6SdNBjOHMxizRp7y0jKdeJmguA==
+wc_toolkit@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/wc_toolkit/-/wc_toolkit-0.1.4.tgz#ee09a96a61b67485d6b759db82db0a55cdd9e6ba"
+  integrity sha512-PfkpjiUntdaY4yiFVB75OE6wOGwQAKmWvvrvPrpSQZElgExMywhRet1nH31ZvFRVzW797IqdZRP6J46ar9RZsw==
 
 which@^2.0.1:
   version "2.0.2"
