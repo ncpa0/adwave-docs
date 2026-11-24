@@ -8,6 +8,7 @@ const { changeExt } = require("./change-ext.cjs");
 const { ExtFilesCtx } = require("./external-files-context.cjs");
 const crypto = require("crypto");
 const { default: dedent } = require("dedent");
+const { url } = require("./url.cjs");
 
 function createHash(data, len) {
   return crypto
@@ -172,7 +173,7 @@ const plugin = (srcDir, outDir) => ({
     build.onLoad({ filter: /\.svg$/ }, async (args) => {
       const relPath = path.relative(srcDir, args.path);
       await fs.promises.copyFile(args.path, path.join(outDir, relPath));
-      const svgPath = path.isAbsolute(relPath) ? relPath : `/${relPath}`;
+      const svgPath = url(relPath);
 
       const componentName = path
         .basename(args.path, ".svg")
