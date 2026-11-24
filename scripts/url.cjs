@@ -1,4 +1,4 @@
-import path from "node:path";
+const path = require("node:path");
 
 const BASE_PATH = typeof process.env.BASE_PATH === "string"
   ? process.env.BASE_PATH
