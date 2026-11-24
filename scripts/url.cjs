@@ -4,7 +4,7 @@ const BASE_PATH = typeof process.env.BASE_PATH === "string"
   ? process.env.BASE_PATH
   : "adwave-docs";
 
-export function url(...url) {
+module.exports.url = function url(...url) {
   let u = path.join(...url);
 
   if (
@@ -19,4 +19,4 @@ export function url(...url) {
   }
 
   return u;
-}
+};
